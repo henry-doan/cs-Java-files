@@ -1,0 +1,25 @@
+package a1;
+
+import javax.swing.JOptionPane;
+ 
+
+public class DrivingCostCalulator {
+	public static void main(String[] args) {
+		JOptionPane.showMessageDialog(null, "-------------------------------\n" + "Welcome to the Driving Cost Calulator\n" + "-------------------------------");
+		String drivingDistanceMsg = JOptionPane.showInputDialog("What is your driving distance in miles?");
+		double drivingDistance;
+		drivingDistance = Double.parseDouble(drivingDistanceMsg);
+
+		String vehicleMilesMsg = JOptionPane.showInputDialog("What is your driving distance in miles?");
+		double vehicleMiles;
+		vehicleMiles = Double.parseDouble(vehicleMilesMsg);
+
+		String gasPriceMsg = JOptionPane.showInputDialog("What is your gas price in dollars?");
+		double gasPrice ;
+		gasPrice = Double.parseDouble(gasPriceMsg);
+
+//		JOptionPane.showMessageDialog(null,drivingDistance + gasPriceMsg);
+		double moneyTotal = drivingDistance * gasPrice / vehicleMiles;
+		JOptionPane.showMessageDialog(null, "Your total is: $" + moneyTotal);
+	}
+}

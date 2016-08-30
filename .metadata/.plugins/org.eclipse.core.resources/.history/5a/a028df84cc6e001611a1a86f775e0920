@@ -1,0 +1,56 @@
+package lab2;
+
+public class DrawFigures {
+	/**
+     * Prints out a diamond, an X, and a rocket.
+     */
+	public static void topDiamond(){
+		System.out.println("   /\\\n"+ "  /  \\" );
+	}
+	
+	public static void bottomDiamond() {
+		
+	}
+	
+	public static void square(){
+		
+	}
+	
+	public static void nameOfRocket() {
+		
+	}
+	
+	public static void main (String[] args)
+	{
+		System.out.println("   /\\");
+		System.out.println("  /  \\");
+		System.out.println(" /    \\");
+		System.out.println(" \\    /");
+		System.out.println("  \\  /");
+		System.out.println("   \\/");
+		System.out.println();
+		System.out.println(" \\    /");
+		System.out.println("  \\  /");
+		System.out.println("   \\/");
+		System.out.println("   /\\");
+		System.out.println("  /  \\");
+		System.out.println(" /    \\");
+		System.out.println();
+		System.out.println("   /\\");
+		System.out.println("  /  \\");
+		System.out.println(" /    \\");
+		System.out.println("+------+");
+		System.out.println("|      |");
+		System.out.println("|      |");
+		System.out.println("+------+");
+		System.out.println("|CS1410|");
+		System.out.println("|      |");
+		System.out.println("+------+");
+		System.out.println("|      |");
+		System.out.println("|      |");
+		System.out.println("+------+");
+		System.out.println("   /\\");
+		System.out.println("  /  \\");
+		System.out.println(" /    \\");
+	}
+}

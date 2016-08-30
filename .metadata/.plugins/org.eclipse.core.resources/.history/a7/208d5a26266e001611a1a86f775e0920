@@ -1,0 +1,9 @@
+package a1;
+
+import javax.swing.JOptionPane;
+
+public class DrivingCostCalulator {
+	public static void main(String[] args) {
+		String greetingMsg = JOptionPane.showInputDialog("-------------------------------\n" + "Welcome to the Driving Cost Calulator\n" + "-------------------------------");
+	}
+}

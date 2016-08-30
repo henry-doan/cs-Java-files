@@ -1,0 +1,23 @@
+package a1;
+
+import javax.swing.JOptionPane;
+import java.util.Scanner; 
+
+public class DrivingCostCalulator {
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner (System.in);
+		JOptionPane.showMessageDialog(null, "-------------------------------\n" + "Welcome to the Driving Cost Calulator\n" + "-------------------------------");
+		String drivingDistanceMsg = JOptionPane.showInputDialog("What is your driving distance in miles?");
+		double drivingDistance = scanner.next();
+
+		JOptionPane.showMessageDialog(null,drivingDistance);
+		String vehicleMilesMsg = JOptionPane.showInputDialog("What is your driving distance in miles?");
+	double vehicleMiles= reader.nextDouble();
+//		String gasPriceMsg = JOptionPane.showInputDialog("What is your gas price in dollars?");
+//		double gasPrice = reader.nextDouble();
+		JOptionPane.showMessageDialog(null,drivingDistance + vehicleMiles);
+
+//	System.out.println(drivingDistance + vehicleMiles);
+	
+	}
+}
