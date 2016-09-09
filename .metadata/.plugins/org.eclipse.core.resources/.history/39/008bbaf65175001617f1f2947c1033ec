@@ -1,0 +1,272 @@
+package a2;
+
+import java.util.Scanner;
+
+/* 
+ * Instructions for students:
+ * 
+ * Use the main method only to make calls to the other methods to test them.  
+ * The correct operation of your methods should not depend in any way on the
+ * code in main.
+ * 
+ * Do not do any printing within the method bodies, except the main method.
+ * 
+ * Leave your testing code in main -- you will be graded on this.
+ *  
+ * You must include Javadoc comments for all methods below. See the 
+ * assignment specifications for more details. 
+ */
+
+/**
+ * A collection of methods for the second assignment of CS 1410. Change this to
+ * your own Javadoc.
+ * 
+ * @author Henry Doan
+ */
+public class MethodCollection {
+
+	// In main, write tests that call each of the methods you write. You should
+	// think
+	// about cases that cover different possible results.
+	public static void main(String[] args) {
+//		
+//		countTokens("this is a test");
+//		countTokensThatAreNotInt("12");
+//		describeSign(-2);
+//		isEvenlyDivisibleBySeven(14);
+//		makeLine('+', '-', 28);
+		makeSquare(6);
+//		capitalizeLastCharacter("raft");
+//		capitalizeLastCharactersInSentence("This is a test");
+		
+	}
+
+	/**
+	 * Returns the number of tokens (as identified by the s.next() method on
+	 * Scanners s) that appears in the parameter sentence. For example,
+	 * countTokens("this is a test") should return 4, and countTokens("") should
+	 * return 0.
+	 * 
+	 * IMPLEMENTATION NOTE: This will require a while loop. Use a Scanner to
+	 * split the string into individual words. You may not use more advanced
+	 * Java functions that do the token counting for you.
+	 */
+	public static int countTokens(String sentence) {
+		// Change or modify the return. This is here for now to prevent compiler
+		// errors.
+		int count = 0;
+		Scanner s = new Scanner(sentence);
+		while (s.hasNextLine()){
+			s.next();
+			count++;
+		};
+		System.out.println(count);
+		return count;
+	}
+
+
+	/**
+	 * Returns the number of tokens (as identified by the s.next() method on
+	 * Scanners s) in the parameter sentence that are not an int, as identified
+	 * by s.hasNextInt(). For example, countTokensThatAreNotInt("this is 12 a
+	 * test") should return 4, and countTokensThatAreNotInt("12") should return
+	 * 0.
+	 * 
+	 * IMPLEMENTATION NOTE: This will require a while loop. Use a Scanner to
+	 * split the string into individual words. Use an if statement to figure out
+	 * whether to count the token or not.
+	 */
+	
+	
+	public static int countTokensThatAreNotInt(String sentence) {
+		// Change or modify the return. This is here for now to prevent compiler
+		// errors. 
+		// do an if statement
+		int count = 0;
+		Scanner s = new Scanner(sentence);
+		while (s.hasNextLine()){
+			s.next();
+			count++;
+			if (s.hasNextInt()) {
+				count--;
+			};
+			String regex = "^[0-9]$";
+			if (sentence == regex) {
+				count = 0;
+			};
+		};
+		s.close();
+		System.out.println(count);
+		return count;
+	}
+
+	/*
+	 * Write a method called describeSign. The method should have one parameter,
+	 * an integer value. The method should return the string literal "negative"
+	 * if the value is less than zero and the string literal "non-negative" if
+	 * the value is greater than or equal to zero.
+	 * 
+	 * For example, the method call describeSign(7) should return
+	 * "non-negative".
+	 * 
+	 * You should use an if statement.
+	 * 
+	 * You must return these strings exactly (all lower case letters, spelled
+	 * correctly, no extra spaces). Also note that the double quotes are used to
+	 * denote a string literal, they do not appear in the actual string.
+	 * 
+	 * Replace this comment with a Javadoc comment
+	 */
+	public static int describeSign(Integer integerValue) {
+		if (integerValue < 0) {
+			System.out.println("negative");
+		};
+		if (integerValue >= 0) {
+			System.out.println("non-negative");
+		};
+		return integerValue;
+	}
+
+	/*
+	 * Write a method called isEvenlyDivisibleBySeven. The method should have
+	 * one parameter, an integer value. The method should return a boolean value
+	 * true if the parameter is evenly divisible by 7 and false otherwise.
+	 * 
+	 * For example, the method call isEvenlyDivisibleBySeven(14) should return
+	 * true. The method call isEvenlyDivisibleBySeven(16) should return false.
+	 * 
+	 * You will want to use the modulus operator %, which evaluates to the
+	 * remainder of x%y. Research this on your own.
+	 * 
+	 * Replace this comment with a Javadoc comment
+	 */
+	public static int isEvenlyDivisibleBySeven(Integer integerValue) {
+		
+		if (integerValue % 7 == 0 ) {
+			System.out.println("true");
+		} else {
+			System.out.println("false");
+		};
+		return integerValue;
+	}
+	/*write it in the if statement.
+
+	/**
+	 * Returns a String of length width that begins and ends with the character
+	 * edge and contains width-2 copies of the character inner in between. For
+	 * example, if edge is '+', inner is '-', and width is 8, the method should
+	 * return "+------+".
+	 * 
+	 * The method does not print anything. The parameter width must be greater
+	 * than or equal to 2.
+	 * 
+	 * IMPLEMENTATION NOTE: This method is already completely implemented. There
+	 * is no need for you to change anything.
+	 */
+	public static String makeLine(char edge, char inner, int width) {
+		String line = "";
+		int i = 0;
+		while (i < width - 2) {
+			line = line + inner;
+			i = i + 1;
+		}
+		System.out.println(edge + line + edge);
+		return edge + line + edge;
+	}
+
+	/**
+	 * Returns a string which, when printed out, will be a square shaped like
+	 * this, but of varying size:
+	 * 
+	 * <pre>
+	 * +-----+
+	 * |     |
+	 * |     |
+	 * |     |
+	 * |     |
+	 * |     |
+	 * +-----+
+	 * </pre>
+	 * 
+	 * The returned string should consist of width lines, each ending with a
+	 * newline. In addition to the newline, the first and last lines should
+	 * begin and end with '+' and should contain width-2 '-' symbols. In
+	 * addition to the newline, the other lines should begin and end with '|'
+	 * and should contain width-2 spaces.
+	 * 
+	 * A newline is a special character use to force one string to be on
+	 * multiple lines. System.out.println("Hi\nThere"); will produce output like
+	 * Hi There The '\n' character is a newline.
+	 * 
+	 * The method does not print anything. The width parameter must be greater
+	 * than or equal to 2.
+	 * 
+	 * IMPLEMENTATION NOTE: For full credit (and for easier implementation),
+	 * make use of the makeLine method in your implementation of makeSquare.
+	 * You'll need to use a loop to call makeLine the correct number of times.
+	 * 
+	 * Replace this comment with your own Javadoc comment
+	 *
+	 * 
+	 */
+	public static String makeSquare(int width) {
+//		System.out.println("|" + width + "|");
+		int widthMinusTwo = width - 2;
+		String blank = "af";
+		String outside = makeLine('+', '-', width);
+//		System.out.println(outside + "\n");
+		for (int i = 0; i < widthMinusTwo; i += 1 ) {
+			System.out.println(blank);
+		}
+		System.out.println(outside);
+//		while (){
+//			System.out.println("|" + middle + "|");
+//			
+//		}
+		
+
+		return "";
+	}
+
+	/**
+	 * Returns the string that results from capitalizing the last character of
+	 * word, which is required to have at least one character. For example,
+	 * capitalizeLastCharacter("hello") is "hellO" and
+	 * capitalizeLastCharacter("JACK") is "JACK".
+	 * 
+	 * IMPLEMENTATION NOTE: The static method Character.toUpperCase() will be
+	 * helpful. The methods s.charAt() and s.substring() [where s is a String]
+	 * will also be helpful.
+	 * 
+	 * 
+	 * Replace this comment with your own Javadoc comment
+	 */
+	public static String capitalizeLastCharacter(String word) {
+		int sizeOfWord = word.length();
+		String back = word.substring((sizeOfWord-1), (sizeOfWord)) ;
+		String uppercasing = back.toUpperCase();
+		String front = word.substring(0, word.length()-1);
+		String newWord = front + uppercasing;
+		System.out.println(newWord);
+		return word;
+	}
+
+	/**
+	 * Returns the string that results from capitalizing the last character of
+	 * every word in the input parameter sentence, which is required to have at
+	 * least one character. For example,
+	 * capitalizeLastCharactersInSentence("Hello there") would return "HellO
+	 * therE".
+	 * 
+	 * Replace this comment with your own Javadoc comment
+	 */
+	public static String capitalizeLastCharactersInSentence(String sentence) {
+		Scanner s = new Scanner(sentence);		
+		while (s.hasNextLine()){
+			capitalizeLastCharacter(s.next());
+		}
+		s.close();
+		return sentence;
+	}
+
+}
