@@ -1,0 +1,170 @@
+package a3;
+
+import java.util.Scanner;
+
+public class LoopPatterns {
+	
+	public static void main(String[] args) { 
+//		System.out.println(findSmallestPositiveNumber("1 7 5"));	 
+//		System.out.println(isPalindrome("adsf"));
+//		System.out.println(moreEvenThanOdd("2 4 6 9 7 1 3"));
+//		System.out.println(camelCase("hi i like ice cream"));
+//		System.out.println(lowestAlphabetically("bee cherry zoo apple pear"));
+//		System.out.println(topPortion(0, 4));
+//		System.out.println(borderTop('-', 5));
+		System.out.println(timesTable(3,4));
+	}
+	
+	public static int findSmallestPositiveNumber(String sentence) {
+		Scanner s = new Scanner(sentence);
+		int small = s.nextInt();
+		while (s.hasNextInt()) {
+			int num = s.nextInt();
+			if (num < small && num > 0) {
+				small = num;
+			}
+		}
+		s.close();
+		return small;
+	}
+	
+	public static boolean isPalindrome(String word) {
+		boolean test = word.equals(new StringBuilder(word).reverse().toString());
+	    return test;
+	}
+	
+	public static boolean moreEvenThanOdd(String sentence) {
+		boolean finalNum;
+	    Scanner s = new Scanner(sentence);
+	    int oddNumbers = 0;
+	    int evenNumbers = 0;
+	    
+	    while (s.hasNextInt()) {
+	    		int num = s.nextInt();
+		    
+	    		if(num % 2 == 1){
+		        oddNumbers++;
+		    } ; 
+	    		 if(num % 2 == 0){
+		        evenNumbers++;
+		    };
+		    
+	    }
+	    if (evenNumbers > oddNumbers) {
+    			finalNum = true;
+	    } else {
+	    		finalNum = false;
+	    };
+	    s.close();
+	    return finalNum;
+	}
+
+	public static String camelCase( String sentence){
+		StringBuilder ret = new StringBuilder(sentence.length());
+	    for (String word : sentence.split(" ")) {
+	        if (!word.isEmpty()) {
+	            ret.append(word.substring(0, 1).toUpperCase());
+	            ret.append(word.substring(1).toLowerCase());
+	        }
+	        if (!(ret.length()==sentence.length())){
+	            ret.append(" ");
+	            }
+	       
+	    }
+	    
+	    String finalWord = ret.toString();
+	    String output = finalWord.replaceAll("\\s", "");
+	    int outputLength = output.length();
+	    String first = output.substring(0, 1).toLowerCase();
+	    String finalOutput = first + output.substring(1, outputLength );
+	    return finalOutput;
+	}
+	
+	public static String lowestAlphabetically(String sentence) {
+		Scanner s = new Scanner(sentence);
+		String comesFirst = s.next();
+		while(s.hasNextLine()) {
+			String nextWord = s.next();
+			if ( comesFirst.compareTo(nextWord) > 0) {
+				comesFirst = nextWord;
+			}
+		}
+		s.close();
+		return comesFirst;
+	}
+	
+	public static String topPortion(int startNum , int width) {
+		String spacing = " ";
+		for (int i = 1; i < width; i += 1 ) {
+			
+			System.out.println(i + "|");
+		}
+		String border = width + "|";
+		return border;
+	}
+	
+	public static String borderTop( int maxNumber) { 
+		String table = "     ";
+		for (int t = 1; t <= maxNumber; t++) {
+			table = table + (("---"));
+		}
+		return table;
+	}
+	
+//	public static String numberTop( char inner, int width) {
+//		String line = "     ";
+//		int i = 0;
+//		while (i < width ) {
+//			for (int i = 1; i < width; i += 1 ) {
+//				System.out.println(i);
+//			}
+//		}
+//		return ;
+//	}
+
+
+	
+	public static String space(int integerValue) {
+		String space = new String();
+		if (integerValue <= 10) {
+			space = "  " + integerValue;
+		} else if ( integerValue <= 100) {
+			space = "  " + integerValue;
+		} else {
+			space = "" + integerValue;
+		}
+		return space;
+	}
+	
+	public static String timesTable(int width , int height) {
+		String padding = "     ";
+
+		int topNumberCounter = 1;
+		int topBorderCounter = 1;
+		while (topNumberCounter <= width){
+			padding = padding + "  " + topNumberCounter;
+			topNumberCounter++;
+		}
+		padding = padding + "\n";
+		padding = padding + "   ";
+		
+		while (topBorderCounter <= height){
+			padding = padding + ("---");
+			topBorderCounter++;
+		}
+		padding = padding + "\n";
+		
+		for (int sideNum = 1; sideNum <= height; sideNum++) {
+			padding = padding + (space(sideNum) + "| ");
+			int calc = 1;
+			while(calc <= width) {
+				padding = padding + (space(sideNum * calc) + "");
+				calc++;
+			}
+			padding = padding + " \n";
+		}
+		return padding;
+	}
+
+
+}
