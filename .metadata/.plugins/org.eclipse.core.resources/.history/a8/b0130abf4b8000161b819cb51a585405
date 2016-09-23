@@ -1,0 +1,70 @@
+package animation;
+
+import java.awt.Color;
+import java.awt.Graphics;
+
+public class Animation
+{
+    /**
+     * This is the method that you need to rewrite to create a custom animation. This method is called repeatedly as the
+     * animation proceeds. It needs to draw to g how the animation should look after t milliseconds have passed.
+     * 
+     * @param g Graphics object on which to draw
+     * @param t Number of milliseconds that have passed since animation started
+     */
+    public static void paintFrame (Graphics g, int t, int height, int width)
+    {
+    		
+    	drawPerson1(g, 0 , 0 , 0, Color.BLACK);
+    	drawPerson2(g, 0 , 0 , 0, Color.BLACK);
+        // One house moves steadily from left to right. It starts out invisible and
+        // gets larger as time goes on. After two seconds it turns right.
+//        if (t < 2000)
+//        {
+//            drawHouse(g, 5 + t / 10, 400, t / 2000., Color.BLUE);
+//        }
+//        else
+//        {
+//            drawHouse(g, 205, 400 + (t - 2000) / 10, t / 2000., Color.BLUE);
+//        }
+//
+//        // The other house follows a sine wave and stays the same size. After three
+//        // seconds it starts moving up and down.
+//        if (t < 3000)
+//        {
+//            drawHouse(g, 5 + t / 10, 200 + (int) (50 * Math.sin(t * Math.PI / 1000)), 1, Color.RED);
+//        }
+//        else
+//        {
+//            drawHouse(g, 305, 200 + (int) (50 * Math.sin(t * Math.PI / 1000)), 1, Color.RED);
+//        }
+    }
+
+    /**
+     * Draws a house on g whose upper-left corner is at coordinate (x,y) using the provided scaling factor and color.
+     */
+    public static void drawHouse (Graphics g, int x, int y, double scale, Color color)
+    {
+        g.setColor(color);
+        g.drawRect(x, y, (int) (50 * scale), (int) (30 * scale));
+        g.drawLine(x, y, x + (int) (25 * scale), y - (int) (15 * scale));
+        g.drawLine(x + (int) (25 * scale), y - (int) (15 * scale), x + (int) (50 * scale), y);
+    }
+    
+    public static void  drawPerson1 (Graphics g, int x, int y, double scale, Color color){
+    	g.setColor(color);
+    	g.fillOval(10, 50, 50, 50);
+    	g.drawLine(35, 170, 35, 60 );
+    	g.drawLine( 10, 120, 60, 120 );
+    	g.drawLine(35, 170, 60, 200); 
+    	g.drawLine(35, 170, 10, 200);	
+    }
+    public static void  drawPerson2 (Graphics g, int x, int y, double scale, Color color){
+    	g.setColor(color);
+    	g.fillOval(10, 100, 50, 50);
+    	g.drawLine(35, 220, 35, 110 );
+    	g.drawLine( 10, 170, 60, 170 );
+    	g.drawLine(35, 220, 60, 250); 
+    	g.drawLine(35, 220, 10, 250);	
+    }
+}
