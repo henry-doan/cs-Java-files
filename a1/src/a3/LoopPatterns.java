@@ -42,6 +42,7 @@ public class LoopPatterns {
 		s.close();
 		return small;
 	}
+
 	
 	/*
 	* This method is a boolean method that returns true or false of the condition. The parameter is a string 
