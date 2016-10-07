@@ -1,0 +1,14 @@
+package a6;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class ArrayLibaryTest {
+
+	@Test
+	public void test() {
+		fail("Not yet implemented");
+	}
+
+}
