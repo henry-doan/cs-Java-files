@@ -1,0 +1,107 @@
+package a7;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class LifetimeEarningsTest {
+
+	@Test
+	public void testLifetimeEarnings() {
+		int[] result = {0, 0, 0, 0, 0};
+		
+		int[] test = {2, -1, 21, 3, -41};
+		clear(test);
+		assertArrayEquals(result, test);
+		
+		int[] test2 = {-1, -2, -3, -4, -5};
+		clear(test2);
+		assertArrayEquals(result, test2);
+		
+		int[] test3 = {2, 'a', -21, '.', -41};
+		clear(test3);
+		assertArrayEquals(result, test3);
+	}
+	
+	public void testCurrentSalary() {
+		int[] result = {0, 0, 0, 0, 0};
+		
+		int[] test = {2, -1, 21, 3, -41};
+		clear(test);
+		assertArrayEquals(result, test);
+		
+		int[] test2 = {-1, -2, -3, -4, -5};
+		clear(test2);
+		assertArrayEquals(result, test2);
+		
+		int[] test3 = {2, 'a', -21, '.', -41};
+		clear(test3);
+		assertArrayEquals(result, test3);
+	}
+	
+	public void testSetYear() {
+		int[] result = {0, 0, 0, 0, 0};
+		
+		int[] test = {2, -1, 21, 3, -41};
+		clear(test);
+		assertArrayEquals(result, test);
+		
+		int[] test2 = {-1, -2, -3, -4, -5};
+		clear(test2);
+		assertArrayEquals(result, test2);
+		
+		int[] test3 = {2, 'a', -21, '.', -41};
+		clear(test3);
+		assertArrayEquals(result, test3);
+	}
+	
+	public void testIncrementYear() {
+		int[] result = {0, 0, 0, 0, 0};
+		
+		int[] test = {2, -1, 21, 3, -41};
+		clear(test);
+		assertArrayEquals(result, test);
+		
+		int[] test2 = {-1, -2, -3, -4, -5};
+		clear(test2);
+		assertArrayEquals(result, test2);
+		
+		int[] test3 = {2, 'a', -21, '.', -41};
+		clear(test3);
+		assertArrayEquals(result, test3);
+	}
+	
+	public void testClear() {
+		int[] result = {0, 0, 0, 0, 0};
+		
+		int[] test = {2, -1, 21, 3, -41};
+		clear(test);
+		assertArrayEquals(result, test);
+		
+		int[] test2 = {-1, -2, -3, -4, -5};
+		clear(test2);
+		assertArrayEquals(result, test2);
+		
+		int[] test3 = {2, 'a', -21, '.', -41};
+		clear(test3);
+		assertArrayEquals(result, test3);
+	}
+	
+	public void testClear() {
+		int[] result = {0, 0, 0, 0, 0};
+		
+		int[] test = {2, -1, 21, 3, -41};
+		clear(test);
+		assertArrayEquals(result, test);
+		
+		int[] test2 = {-1, -2, -3, -4, -5};
+		clear(test2);
+		assertArrayEquals(result, test2);
+		
+		int[] test3 = {2, 'a', -21, '.', -41};
+		clear(test3);
+		assertArrayEquals(result, test3);
+	}
+	
+
+}

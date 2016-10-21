@@ -1,0 +1,33 @@
+package a7;
+
+public class LifetimeEarnings {
+	public static void main(String[] args) {
+		 
+	}
+	
+	public double Starter(double starterSalary, double raisedPercentage ) {
+		return 0.0;
+	}
+
+	public void currentSalary() {
+		
+	}
+	
+	public void setYear(int CurrentYear){
+		
+	}
+	
+	public void incrementYear(int incrementedYear){
+		
+	}
+	
+	public double computeLifetimeEarnings(int yearsOfEarning){
+		
+		return 0.0;
+	}
+	
+	public String toString() {
+		
+		return "";
+	}
+}

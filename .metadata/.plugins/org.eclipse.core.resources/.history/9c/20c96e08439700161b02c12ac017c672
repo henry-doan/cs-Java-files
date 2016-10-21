@@ -1,0 +1,41 @@
+package a7;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class LifetimeEarningsTest extends LifetimeEarnings {
+
+	public LifetimeEarningsTest(double _starterSalary, double _raise) {
+		super(_starterSalary, _raise);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Test
+	
+	public void testCurrentSalary() {
+		double starterSalary = 1.0;
+		double raisedPercentage = 1.0;
+		
+		currentSalary();
+		equals(1.0);
+	}
+	
+	public void testSetYear() {
+	
+	}
+	
+	public void testIncrementYear() {
+		
+	}
+	
+	public void testComputeLifetimeEarnings() {
+		
+	}
+	
+	public void testToString() {
+		
+	}
+	
+
+}

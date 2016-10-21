@@ -1,0 +1,36 @@
+package a7;
+
+public class LifetimeEarnings {
+	 private double x;
+	 private double y;
+	 
+	 public Point() {
+	 x = 0.0;
+	 y = 0.0;
+	 }
+	 
+	 public Point(double _x, double _y) {
+	 x = _x;
+	 y = _y;
+	 }
+	 
+	 public void moveVertically(double offset) {
+	 y += offset;
+	 }
+	 
+	 public double getX() {
+	 return x;
+	 }
+
+	 public static void main(String[] args) {
+	 
+	 Point[] points = new Point[10];
+	 System.out.println(points[0].x + " " + points[0].y);
+	 }
+//	public static String test(String test) {
+//		
+//		return '0';
+//	}
+	
+	
+}

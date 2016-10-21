@@ -1,0 +1,12 @@
+package lab8;
+
+public class Fraction {
+	private int numerator;
+	private int denomentor;
+	
+	public Fraction(int _num, int _deno ) {
+		numerator = _num;
+		denomentor =_deno;
+	}
+	
+}
