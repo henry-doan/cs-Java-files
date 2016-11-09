@@ -6,17 +6,17 @@ package a9;
  * is empty. Operations are provided to add, get, set, and remove elements at an index.
  * 
  */
-public class DynamicArray {
+public class DynamicArray<T> {
 
 	// Make the instance variable protected as the subclasses will be tightly
 	// integrated with this class.
-	protected String[] data; // the backing array
+	protected T[] data; // the backing array
 	protected int count; // The number of elements used in the data array
 	/**
 	 * Creates an empty dynamic array.
 	 */
 	public DynamicArray() {
-		data = new String[0]; 
+		data = (T[]) new Object[0]; 
 		count = 0;
 	}
 
@@ -28,10 +28,10 @@ public class DynamicArray {
 	 * @param i
 	 * @return
 	 */
-	public String[] growthStrategy(int i) {
-		String[] newData;
+	public T[] growthStrategy(int i) {
+		T[] newData;
 		if (count == data.length) {
-			newData = new String[data.length + 1];
+			newData = (T[]) new Object[data.length + 1];
 		}
 		else
 			newData = data;
@@ -53,12 +53,12 @@ public class DynamicArray {
 	 * @param i
 	 * @param s
 	 */
-	public void add(int i, String s) {
+	public void add(int i, T s) {
 		if(i < 0 || i > size())
 			throw new IndexOutOfBoundsException();
 
 		// We have abstracted out the code that grows the array
-		String[] newData = growthStrategy(i);
+		T[] newData = growthStrategy(i);
 		newData[i] = s;
 		data = newData;
 	}
@@ -68,7 +68,7 @@ public class DynamicArray {
 	 * 
 	 * @param s
 	 */
-	public void add(String s) {
+	public void add(T s) {
 		add(count, s);
 	}
 
@@ -78,7 +78,7 @@ public class DynamicArray {
 	 * @param i
 	 * @return the string stored at index i
 	 */
-	public String get(int i) {
+	public T get(int i) {
 		if(i < 0 || i >= size())
 			throw new IndexOutOfBoundsException();
 
@@ -101,7 +101,7 @@ public class DynamicArray {
 	 * @param i
 	 * @param s
 	 */
-	public void set(int i, String s) {
+	public void set(int i, T s) {
 		if(i < 0 || i >= size())
 			throw new IndexOutOfBoundsException();
 
@@ -115,8 +115,8 @@ public class DynamicArray {
 	 * @param i
 	 * @return
 	 */
-	public String[] shrinkStrategy(int i) {
-		String[] newData = new String[data.length - 1];
+	public T[] shrinkStrategy(int i) {
+		T[] newData = (T[]) new Object[data.length - 1];
 		count--;
 		for(int j = 0; j < i; j++) {
 			newData[j] = data[j];

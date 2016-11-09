@@ -1,0 +1,6 @@
+package a9;
+
+import a9.DynamicArray;
+public class DynamicArrayDouble {
+
+}

@@ -1,0 +1,7 @@
+package a9;
+
+import a9.DynamicArrayAbstract;
+
+public class DynamicArrayDouble {
+	String[] data = (String[]) new Object[(length *2)+ 1];
+}
