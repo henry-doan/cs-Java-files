@@ -11,14 +11,15 @@ import java.util.Scanner;
 public class LoopPatterns {
 	
 	public static void main(String[] args) { 
-		System.out.println(findSmallestPositiveNumber("1 7 5"));	 
-		System.out.println(isPalindrome("adsf"));
-		System.out.println(moreEvenThanOdd("2 4 6 9 7 1 3"));
-		System.out.println(camelCase("hi i like ice cream"));
-		System.out.println(lowestAlphabetically("bee cherry zoo apple pear"));
-		System.out.println(timesTable(3,4));
+//		System.out.println(findSmallestPositiveNumber("1 7 5"));	 
+//		System.out.println(isPalindrome("adsf"));
+//		System.out.println(moreEvenThanOdd("2 4 6 9 7 1 3"));
+//		System.out.println(camelCase("hi i like ice cream"));
+//		System.out.println(lowestAlphabetically("bee cherry zoo apple pear"));
+//		System.out.println(timesTable(3,4));
+
 	}
-	
+
 	/*
 	* This method takes in a string parameter of the input sentence with a list of numbers in a string
 	* and have a scanner go through and do some logic to see if it is the smallest positive integer.

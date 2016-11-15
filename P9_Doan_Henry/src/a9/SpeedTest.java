@@ -11,7 +11,7 @@ public class SpeedTest {
 		DynamicArrayCustom<String> custom = new DynamicArrayCustom<String>();
 		
 		// Set the desired number of iterations
-		int N = 1_000;
+		int N = 10_000;
 		
 		// Collect the time required to add N elements to the slow DA.
 		long startTime = System.nanoTime();

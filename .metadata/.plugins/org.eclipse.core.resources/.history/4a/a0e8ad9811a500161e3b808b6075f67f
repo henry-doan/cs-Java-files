@@ -1,9 +1,0 @@
-package a9;
-
-import a9.DynamicArrayAbstract;
-
-public class DynamicArrayAddOne {
-	public shrinkStrategy(int i) {
-		T[] data = (T[]) new Object[length+ 1];
-	}
-}
