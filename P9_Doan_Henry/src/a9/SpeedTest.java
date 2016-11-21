@@ -4,7 +4,7 @@ import a9.DynamicArray;
 
 public class SpeedTest {
 	public static void main(String[] args) {
-		
+
 		// Create an object of each array type
 		DynamicArrayAddOne<Integer> addOne = new DynamicArrayAddOne<Integer>();
 		DynamicArrayDouble<Integer> doubleData = new DynamicArrayDouble<Integer>();
