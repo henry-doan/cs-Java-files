@@ -1,5 +1,7 @@
 package a10;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 
 public class LightsButtons extends JButton {
@@ -39,6 +41,23 @@ public class LightsButtons extends JButton {
 	 */
 	public void setColumns(int columns) {
 		Columns = columns;
+	}
+	
+	public void black(){
+		setBackground(Color.BLACK);
+	}
+	
+	public void white(){
+		setBackground(Color.WHITE);
+	}
+	
+	// toggle color
+	public void toggle() {
+		if (Color.WHITE == Color.WHITE) {
+			black(); 
+		} else {
+			white();
+		}
 	}
 	
 
