@@ -27,6 +27,7 @@ public class minimap extends JPanel {
 	
 	// have materials here
 	private BufferedImage Minimap;
+	private BufferedImage Plains;
 	
 	/** 
 	 * Construct a panel with a starter images  
@@ -36,7 +37,7 @@ public class minimap extends JPanel {
 	
 	public minimap() {
 		
-		//try catch of the materail 
+		//try catch of the material 
 		try {
 			Minimap = ImageIO.read(new File("./imgs/minimap.png"));
 			
@@ -47,6 +48,17 @@ public class minimap extends JPanel {
 		JPanel minimapPanel = new JPanel();
 		
 		minimapPanel.setLayout(new GridLayout(Minimap.getWidth(), Minimap.getHeight()));	
+		
+		for(int i = 0; i < Minimap.getWidth(); i++ ) {
+			for (int x = 0; x < Minimap.getHeight(); x++){
+				int col = Minimap.getRGB(x , i);
+				
+				if  (col == -8466898) {
+					// set to tiles for buffer images
+					ImagePanel imgPanel = 
+				} else if(col ==)
+			}
+		}
 		
 	}
 	

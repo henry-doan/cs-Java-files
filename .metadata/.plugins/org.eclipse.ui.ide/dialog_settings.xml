@@ -5,6 +5,7 @@
 		<item value="true" key="WizardProjectsImportPage.STORE_COPY_PROJECT_ID"/>
 		<item value="false" key="WizardProjectsImportPage.STORE_ARCHIVE_SELECTED"/>
 		<list key="WizardProjectsImportPage.STORE_DIRECTORIES">
+			<item value="/Users/Henry/Downloads/P12_Start"/>
 			<item value="/Users/Henry/Downloads/P9_Start"/>
 			<item value="/Users/Henry/Documents/P8_start"/>
 			<item value="/Users/Henry/Desktop/P4_Start/src"/>
