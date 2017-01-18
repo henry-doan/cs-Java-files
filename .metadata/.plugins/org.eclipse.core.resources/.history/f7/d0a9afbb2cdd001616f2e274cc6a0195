@@ -1,0 +1,38 @@
+package assignment01;
+
+import java.util.Scanner;
+
+public class Hypotenuse {
+
+	public static void main(String[] args) {
+		welcome();
+		calulation();
+	}
+	
+	public static void welcome() {
+		System.out.println("Hello! Welcome to the Hypotenuse,\nwhere this program will calulate the Hypotenuse with any given two sides!");
+		System.out.println("----------------------------------------------------------------------------");
+	}
+	
+	public static void calulation() {
+		System.out.println("Enter the first side for the program to be calulated: ");
+		int userFirstSide = new Scanner(System.in).nextInt();
+		
+		System.out.println("Enter the second side for the program to be calulated: ");
+		int userSecondSide = new Scanner(System.in).nextInt();
+		
+		double userFirstSideSquared = Math.pow(userFirstSide, 2);
+		double userSecondSideSquared = Math.pow(userSecondSide, 2);
+		
+		double userFirstSideSquaredPlusUserSecondSideSquared = userFirstSideSquared + userSecondSideSquared;
+		double hypotenuse = Math.sqrt(userFirstSideSquaredPlusUserSecondSideSquared);
+		
+		System.out.println("You entered the first side to be: " + userFirstSide);
+		System.out.println("and the second side to be: " + userSecondSide);
+		
+		System.out.println(userFirstSide + " squared is: " + userFirstSideSquared );
+		System.out.println(userSecondSide + " squared is: " + userSecondSideSquared);
+		
+		System.out.println("Which has a hypotenuse of: " + hypotenuse);
+	}
+}

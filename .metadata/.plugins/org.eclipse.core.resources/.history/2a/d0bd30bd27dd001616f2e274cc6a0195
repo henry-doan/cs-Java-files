@@ -1,0 +1,26 @@
+package assignment01;
+
+import java.util.Scanner;
+
+public class Temperature {
+
+	public static void main(String[] args) {
+		welcome();
+		calulation();
+	}
+	
+	public static void welcome() {
+		System.out.println("Hello! Welcome to the Temperture,\nwhere this program will calulate Celsius with any given Fahrenheit value!");
+		System.out.println("----------------------------------------------------------------------------");
+	}
+	
+	public static void calulation() {
+		System.out.println("Enter in a Fahrenheit for this program to Celsius counter part:");
+		int Fahrenheit = new Scanner(System.in).nextInt();
+		int fahrenheitMinus32 = Fahrenheit - 32;
+		int integerDivision = 5 / 9;
+		int celsius = (integerDivision * fahrenheitMinus32);
+		System.out.println(celsius);
+	}
+
+}

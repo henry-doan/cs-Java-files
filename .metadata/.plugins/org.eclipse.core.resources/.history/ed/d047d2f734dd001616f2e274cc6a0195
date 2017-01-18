@@ -1,0 +1,42 @@
+package assignment01;
+
+import java.util.Scanner;
+
+/**
+ * This class calculates the hours, minutes and seconds of any given seconds.
+ *
+ * @author  Henry Doan
+ * @version January 17, 2017
+ */
+
+public class ElapsedTime {
+
+	/**
+	 * Main method to run all the other methods in order.
+	 */
+	
+	public static void main(String[] args) {
+		welcome();
+		calculation();
+	}
+	
+	/**
+	 * welcome method shows a welcome text in a string and a line separation.
+	 */
+	
+	public static void welcome() {
+		System.out.println("Hello! Welcome to the ElapsedTime,\nwhere this program will calculate the time with any given amount of seconds!");
+		System.out.println("----------------------------------------------------------------------------");
+	}
+	
+	public static void calculation() {
+		System.out.println("Enter the amount of seconds for the program to be converted: ");
+		int userInputInSeconds = new Scanner(System.in).nextInt();
+		int hours = userInputInSeconds / 3600;
+		int minutes = (userInputInSeconds % 3600) / 60;
+		int seconds = userInputInSeconds % 60;
+
+		String timeString = String.format("%02d:%02d:%02d", hours, minutes, seconds);
+		System.out.println(timeString);
+	}
+}

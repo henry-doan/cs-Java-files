@@ -1,0 +1,45 @@
+package assignment01;
+
+import java.util.Scanner;
+
+/**
+ * This class gets the Celsius value of any fahrenheit input.
+ *
+ * @author  Henry Doan
+ * @version January 17, 2017
+ */
+
+public class Temperature {
+
+	/**
+	 * Main method to run all the other methods in order.
+	 */
+	
+	public static void main(String[] args) {
+		welcome();
+		calculation();
+	}
+	
+	
+	/**
+	 * welcome method shows a welcome text in a string and a line separation.
+	 */
+	
+	public static void welcome() {
+		System.out.println("Hello! Welcome to the Temperture,\nwhere this program will calculate Celsius with any given Fahrenheit value!");
+		System.out.println("----------------------------------------------------------------------------");
+	}
+	
+	public static void calculation() {
+		System.out.println("Enter in a Fahrenheit for this program to Celsius counter part:");
+		int Fahrenheit = new Scanner(System.in).nextInt();
+		int fahrenheitMinus32 = Fahrenheit - 32;
+		
+		int integerDivision = ( 5 * 100 / 9);
+		
+		int celsius = (integerDivision * fahrenheitMinus32) / 100;
+
+		System.out.println(Fahrenheit + " degrees Fahrenheit is approximately: " + celsius + " degrees Celsius!");
+	}
+
+}
