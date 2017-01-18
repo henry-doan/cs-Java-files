@@ -14,8 +14,16 @@ public class DrivingCostCalculator {
 		// Result message
 		System.out.println("-------------------------------\n" + "Driving Cost Calulator Result\n" + "-------------------------------");
 	}
+	 public static int increment(int i) {
+		 i = i + 1;
+		 return i;
+	 }
 	
 	public static void main(String[] args) {
+		int x = 5;
+		increment(x);
+        System.out.println(x);
+        
 		welcomeMsg();
 		
 		// Get the Driving distances and set it to a variable.

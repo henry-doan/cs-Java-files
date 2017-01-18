@@ -1,0 +1,24 @@
+package assignment01;
+
+import java.util.Scanner;
+
+public class ElapsedTime {
+
+	public static void main(String[] args) {
+		welcome();
+		calulation();
+	}
+	
+	public static void welcome() {
+		System.out.println("Hello! Welcome to the ElapsedTime,\nwhere this program will calulate the time with any given amount of seconds!");
+		System.out.println("----------------------------------------------------------------------------");
+	}
+	
+	public static void calulation() {
+		System.out.println("Enter in a radius for this program to calulate the area of the circle:");
+		double radius = new Scanner(System.in).nextDouble();
+		double radiusSquared = Math.pow(radius, 2);
+		double areaOfCircle = ((Math.PI * radiusSquared));
+		System.out.println("You entered the radius of: " +  radius + " with the area calulated to be: " +  areaOfCircle);
+	}
+}

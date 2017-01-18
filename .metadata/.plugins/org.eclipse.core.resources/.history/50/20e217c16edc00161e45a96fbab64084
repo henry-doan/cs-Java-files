@@ -1,0 +1,15 @@
+package assignment01;
+
+public class CircleArea {
+
+	public static void main(String[] args) {
+		welcome();
+	}
+	
+	public static void welcome() {
+		System.out.print("Enter in a radius for this to calulate the area of the circle:");
+		
+	}
+	
+
+}

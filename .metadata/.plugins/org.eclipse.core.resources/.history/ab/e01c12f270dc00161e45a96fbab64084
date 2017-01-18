@@ -1,0 +1,20 @@
+package assignment01;
+
+import java.util.Scanner;
+
+public class CircleArea {
+
+	public static void main(String[] args) {
+		welcome();
+	}
+	
+	public static void welcome() {
+		System.out.println("Enter in a radius for this program to calulate the area of the circle:");
+		double radius = new Scanner(System.in).nextDouble();
+		double radiusSquared = Math.pow(radius, 2);
+		double areaOfCircle = ((Math.PI * radiusSquared));
+		System.out.println("The number is: " +  areaOfCircle);
+	}
+	
+
+}

@@ -1,0 +1,17 @@
+package assignment01;
+
+import java.util.Scanner;
+
+public class CircleArea {
+
+	public static void main(String[] args) {
+		welcome();
+	}
+	
+	public static void welcome() {
+		System.out.println("Enter in a radius for this to calulate the area of the circle:");
+		Scanner radiusInput = new Scanner(System.in);
+	}
+	
+
+}
