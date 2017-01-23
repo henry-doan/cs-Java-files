@@ -1,0 +1,18 @@
+package assignment02;
+
+import java.util.Scanner;
+
+public class Hailstone {
+
+	public static void main(String[] args) {
+		messageprompt();
+
+	}
+	
+	public static void messageprompt() {
+		System.out.println("Hello, welcome to hailstone, lets begin but having you input a number: ");
+		int N = new Scanner(System.in).nextInt();
+		System.out.println(N);
+	}
+
+}

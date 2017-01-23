@@ -1,0 +1,10 @@
+package assignment02;
+
+public class Hailstone {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

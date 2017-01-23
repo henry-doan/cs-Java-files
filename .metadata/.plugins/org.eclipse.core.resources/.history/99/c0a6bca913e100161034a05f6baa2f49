@@ -1,0 +1,37 @@
+package assignment02;
+
+import java.util.Scanner;
+
+public class Hailstone {
+
+	public static void main(String[] args) {
+		messageprompt();
+
+	}
+	
+	public static void messageprompt() {
+		System.out.println("Hello, welcome to hailstone, lets begin but having you input a number: ");
+//		int N = new Scanner(System.in).nextInt();
+//		int N;
+		Scanner s = new Scanner(System.in);
+		int N = s.nextInt();
+		int count = 0;
+		System.out.println(N);
+		while (N < 0) {
+		    System.out.println("I'm sorry, please print a positive number: ");
+		    N = s.nextInt();
+		}
+		
+		while (N < 10) {
+			if ( N % 2 == 0) {
+				N = N / 2;
+				System.out.println(N);
+			} else {
+				N = ((N * 3) + 1);
+				System.out.println(N);
+			}
+		}
+		System.out.println(N);
+	}
+
+}
