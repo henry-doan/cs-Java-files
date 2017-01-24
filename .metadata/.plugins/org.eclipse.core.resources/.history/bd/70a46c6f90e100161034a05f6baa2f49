@@ -1,0 +1,20 @@
+package assignment02;
+
+public class Overflow {
+
+	public static void main(String[] args) {
+		int a;
+		int b;
+		a = 0;
+		b = -100;
+		
+		while ( a != b) {
+			a = a + 1;
+		}
+		
+		System.currentTimeMillis(); 
+		System.out.println("The loop has finshed");
+
+	}
+
+}

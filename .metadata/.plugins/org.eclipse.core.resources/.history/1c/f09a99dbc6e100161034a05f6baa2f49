@@ -1,0 +1,10 @@
+package assignment02;
+
+public class Precision {
+	
+	public static void main(String[] args) {
+		float current = 1;
+		
+		System.out.println(current);
+	}
+}

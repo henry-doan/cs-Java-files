@@ -1,0 +1,24 @@
+package assignment02;
+
+public class Precision {
+	
+	public static void main(String[] args) {
+		float current = 1;
+		
+		// starting the nano timer which is in nano seconds to be more accurate 
+		final long start = System.nanoTime();
+				
+		while ( current < 1_000_000_000) {
+			current = current + 1;
+		}
+		// end the timer outside when the loop is finished
+		final long end = System.nanoTime();
+
+		// output the results and message
+		System.out.println("The loop has finshed \n");
+		
+		// do some math to convert the nano seconds into milliseconds
+		System.out.println("The loop took: " + ((end - start) / 1_000_000) + " milliseconds to complete");
+
+	}
+}

@@ -1,0 +1,35 @@
+package assignment02;
+
+/**
+ * 
+ *
+ * @author  Henry Doan
+ * @version January 23, 2017
+ */
+
+public class Overflow {
+
+	public static void main(String[] args) {
+		calulation();
+	}
+	
+	public static void calulation() {
+		int a;
+		int b;
+		a = 0;
+		b = -100;
+		
+		final long start = System.nanoTime();
+		while ( a != b) {
+			a = a + 1;
+			if (a == b -1) {
+				System.out.println(a);
+			}
+		}
+		
+		final long end = System.nanoTime();
+		
+		System.out.println("The loop has finshed \n");
+		System.out.println("The loop took: " + ((end - start) / 1_000_000) + " milliseconds to complete");
+	}
+}

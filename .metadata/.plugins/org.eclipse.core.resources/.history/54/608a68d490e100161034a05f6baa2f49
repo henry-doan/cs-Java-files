@@ -1,0 +1,25 @@
+package assignment02;
+
+public class Overflow {
+
+	public static void main(String[] args) {
+		int a;
+		int b;
+		a = 0;
+		b = -100;
+		
+		while ( a != b) {
+			a = a + 1;
+		}
+		
+//		long time = System.currentTimeMillis(); 
+		final long start = System.nanoTime();
+		counter.countPrimes(1000000);
+		final long end = System.nanoTime();
+
+		System.out.println("Took: " + ((end - start) / 1000000) + "ms);
+		System.out.println("The loop has finshed");
+//		System.out.println(time);
+	}
+
+}

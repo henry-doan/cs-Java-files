@@ -36,7 +36,7 @@ public class Hailstone {
 		// Have a copy of the user input so it can be unmutable
 		int copyOfN = N;
 		
-		// have array list to store all of the number in the series during the calulation
+		// have aarray list to store all of the number in the series during the calulation
 		List seriesOfNumbers = new ArrayList();
 		
 		// have a counter to count the number of iterations
@@ -72,7 +72,6 @@ public class Hailstone {
 				// push the number into storage in the array list
 				seriesOfNumbers.add(N);
 			}
-			 userInput.close();
 		}
 		
 		// print out the results

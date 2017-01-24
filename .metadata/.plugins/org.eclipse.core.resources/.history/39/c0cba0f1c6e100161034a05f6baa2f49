@@ -1,0 +1,16 @@
+package assignment02;
+
+public class Precision {
+	
+	public static void main(String[] args) {
+		float current = 1;
+		
+		System.out.println(current);
+		
+		while ( current < 1_000_000_000) {
+			current = current++;
+		}
+		System.out.println("The loop has finshed \n");
+
+	}
+}

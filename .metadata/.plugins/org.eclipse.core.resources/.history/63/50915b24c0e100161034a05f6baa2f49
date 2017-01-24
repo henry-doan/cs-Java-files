@@ -1,0 +1,23 @@
+package assignment02;
+
+public class Overflow {
+
+	public static void main(String[] args) {
+		int a;
+		int b;
+		a = 0;
+		b = -100;
+		
+		final long start = System.nanoTime();
+		while ( a != b) {
+			
+			a = a + 1;
+		}
+		
+		final long end = System.nanoTime();
+		
+		System.out.println("The loop has finshed");
+		System.out.println("The loop Took: " + ((end - start) / 1_000_000) + "milliseconds to complete");
+	}
+
+}
