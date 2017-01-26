@@ -1,0 +1,57 @@
+package assignment02;
+
+/**
+ * This program sees the lowest possible integer a hailstone cannot produce.
+ * 
+ * At the beginning of the program, it seems like the program never finishes and the system out 
+ * print when the loop is finished will never print. With some debugging with the commented out code 
+ * the number never actually reaches a billion and the highest number it reaches is 1.6777216E7. The reason
+ * is that a float is only holds 4 bytes of storage in the system so the maximum number is 1.6777216E7 and will
+ * never truly hit one billion.
+ * 
+ * @author  Henry Doan
+ * @version January 24, 2017
+ */
+
+public class Limit {
+
+	public static void main(String[] args) {
+		calculation();
+	}
+	
+	public static void calculation() {
+		int N = 1;
+        int nextNum = N;
+        
+        // while N is less than a billion
+        while (N < 1_000_000_000) {
+        		
+        		// assigning the starting number to be the next integer
+        		N = nextNum; 
+        		
+        		// as long as it is positive do the hailstone
+            while (N != 1) { 
+            		// if N is even
+                if ( N % 2 == 0) {
+    					// do the calculation
+    					N = N / 2;
+
+	    				// else it is odd
+	    			} else {
+	    				// do the calculation
+	    				N = ((N * 3) + 1);	
+	    			}
+                
+                // if it is negative then it fails
+                if (N < 0) {
+                    System.out.println("The smallest number that doesn't have its Hailstone series is: " + nextNum);
+                    System.exit(0); 
+                }
+            }
+            
+            // increment next N
+            nextNum++; 
+        }
+	}
+
+}
