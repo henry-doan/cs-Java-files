@@ -1,0 +1,40 @@
+<html>
+<body>
+<center>
+  <h3>
+    The assignment
+  </h3>
+</center>
+
+<p>
+The goal of this assignment is to practice using Java variables, 'if'
+statements, and loops.&nbsp; In addition, I expect that most students
+will need to experiment a bit to solve parts #2 and #3.&nbsp; This
+experimentation is the most important part of the assignment - I want
+you to <i> practice writing bits of code simply to see what they will
+do. </i>
+</p>
+
+<h4> Part 1: </h4>
+
+<p>
+Consider this series of numbers:
+</p>
+
+<p>
+<tt> 3  10  5  16  8  4  2  1 </tt>
+</p>
+
+<p>
+Starting with a positive integer <i> N </i> , the series is computed with a simple iterative computation:
+
+
+<ul>
+<li> If the current integer <i> N </i> is even, the next number is computed as <i> N / 2 </i> . </li>
+<li> If the current integer <i> N </i> is odd, the next number is computed as <i> N * 3 + 1 </i> . </li>
+<p>
+Repeat.
+</p>
+</ul>
+</body>
+</html>

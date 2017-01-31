@@ -1,0 +1,60 @@
+package lab04;
+
+import java.io.File;
+import java.io.IOException;
+import java.util.Scanner;
+
+import javax.swing.JFileChooser;
+
+public class VerifyFileStructure {
+
+	public static void main(String[] args) {
+		JFileChooser chooser = new JFileChooser("/Users/Henry/Documents/workspace/CS1410/src/lab04");
+		chooser.setDialogTitle("Which file would you like to verify?");
+		chooser.showOpenDialog(null);
+		
+		int result;
+		result = chooser.showOpenDialog(null);
+		
+		if (result == JFileChooser.CANCEL_OPTION) {
+			return;
+		}
+		
+		File inputFile;
+		inputFile = chooser.getSelectedFile();
+		System.out.println("You chose: " + inputFile);
+
+		// create a scanner, read the file, prin out the words, and close the scanner
+		
+		try {
+			Scanner in = new Scanner(inputFile);
+			
+			while (in.hasNext()) {
+				String word = in.next();
+				if (isOpeningTag(word))
+					System.out.print("OPENING TAG: ");
+				System.out.println(word);
+			}
+			
+			in.close();
+		
+		} catch (IOException e) {
+			System.out.println("Could not read the file: " + inputFile);
+		}
+	}
+	
+	/**
+	 * Returns true if the parameter string represents an opening tag,
+	 * such as "<name", or false otherwise.
+	 * 
+	 * @param s Any string
+	 * @return true if the string is an opening tag.
+	 */
+	public static boolean isOpeningTag (String s) {
+		if (s.length() >= 2 && s.startsWith("<") && s.charAt(1) != '/')
+			return true;
+		else 
+			return false;
+	}
+
+}
