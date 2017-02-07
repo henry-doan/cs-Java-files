@@ -1,0 +1,22 @@
+package assignment04;
+
+public class Fraction {
+	private int numerator;
+	private int denominator;
+	
+	public static void main(String[] args) {
+
+	}
+	
+	public Fraction (int n, int d) {
+		numerator = n;
+		denominator = d;
+		
+//		System.out.println("Fraction constructor called with " + n + " and " + d + ".");
+	}
+	
+	public String toString () {
+		return numerator + "/" + denominator;
+	}
+
+}

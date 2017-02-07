@@ -1,0 +1,12 @@
+package assignment04;
+
+public class FractionTester {
+
+	public static void main(String[] args) {
+		System.out.println("Fraction tester:");
+		Fraction f = new Fraction (2, 3);
+		Fraction g = new Fraction (1, 4);
+		Fraction h = new Fraction (5, 1);
+	}
+
+}
