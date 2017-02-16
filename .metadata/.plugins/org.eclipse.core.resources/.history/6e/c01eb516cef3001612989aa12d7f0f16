@@ -1,0 +1,45 @@
+package assignment04;
+
+/**
+ * Compute pi by summing up terms of this infinite summation with using the fraction class
+ *
+ * @author  Henry Doan
+ * @version February 15th, 2017
+ */
+public class Computation {
+
+	public static void main(String[] args) {
+		int i = 0;
+		Double summationResult = (double) 0;
+
+		// Infinity and the stop over flow instead of when the summation is not pi.
+		while ( summationResult != Math.PI) {
+			summationResult = summationResult + fractionCompute( i ).toDouble();
+			if (summationResult != Math.PI) {
+				break;
+			}
+			i++;
+			
+		}
+		
+		System.out.println(summationResult);
+
+	}
+	
+	public static Fraction fractionCompute( int i) {
+		Fraction outsideTheParathesisCompute = new Fraction (1, (long) (Math.pow(16, i)));
+		Fraction firstComputeFraction = new Fraction (4, (8 * i + 1));
+		Fraction secondComputeFraction = new Fraction (2, (8 * i + 4));
+		Fraction thirdComputeFraction = new Fraction (1, (8 * i + 5));
+		Fraction forthComputeFraction = new Fraction (1, (8 * i + 6));
+		
+		Fraction firstAndSecondCompute = firstComputeFraction.subtract(secondComputeFraction);
+		Fraction secondAndThirdCompute = firstAndSecondCompute.subtract(thirdComputeFraction);
+		Fraction insideTheParathesisCompute = secondAndThirdCompute.subtract(forthComputeFraction);
+		
+		Fraction insideAndOutsideMultiplied = outsideTheParathesisCompute.multiply(insideTheParathesisCompute);
+
+		return insideAndOutsideMultiplied;
+	}
+
+}

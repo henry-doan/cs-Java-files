@@ -1,0 +1,32 @@
+package assignment04;
+
+public class Computation {
+
+	public static void main(String[] args) {
+		int counter = 3;
+		int i = 0;
+		
+		while ( i < 1_000_000_000) {
+			
+		Fraction outsideTheParathesisCompute = new Fraction (1, (long) (Math.pow(16, i)));
+		Fraction firstComputeFraction = new Fraction (4, (8 * i + 1));
+		Fraction secondComputeFraction = new Fraction (2, (8 * i + 4));
+		Fraction thirdComputeFraction = new Fraction (1, (8 * i + 5));
+		Fraction forthComputeFraction = new Fraction (1, (8 * i + 6));
+		System.out.println(firstComputeFraction);
+		System.out.println(secondComputeFraction);
+		System.out.println(thirdComputeFraction);
+		System.out.println(forthComputeFraction);
+		
+		Fraction firstAndSecondCompute = firstComputeFraction.subtract(secondComputeFraction);
+		Fraction secondAndThirdCompute = firstAndSecondCompute.subtract(thirdComputeFraction);
+		Fraction insideTheParathesisCompute = secondAndThirdCompute.subtract(forthComputeFraction);
+		
+		Fraction insideAndOutsideMultiplied = outsideTheParathesisCompute.multiply(insideTheParathesisCompute);
+		System.out.println(insideAndOutsideMultiplied.toDouble());
+		i++;
+		}
+
+	}
+
+}

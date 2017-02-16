@@ -1,0 +1,16 @@
+package assignment04;
+
+public class Computation {
+
+	public static void main(String[] args) {
+		int counter = 3;
+		int i = 0;
+		Fraction firstCompute = new Fraction (4, (8 * i + 1));
+		System.out.println(firstCompute);
+//		while (i < counter) {
+//			
+//		}
+
+	}
+
+}

@@ -1,0 +1,25 @@
+package assignment04;
+
+public class Computation {
+
+	public static void main(String[] args) {
+		int counter = 3;
+		int i = 0;
+		
+		Fraction firstComputeFraction = new Fraction (4, (8 * i + 1));
+		Fraction secondComputeFraction = new Fraction (2, (8 * i + 4));
+		Fraction thirdComputeFraction = new Fraction (1, (8 * i + 5));
+		Fraction forthComputeFraction = new Fraction (1, (8 * i + 6));
+		System.out.println(firstComputeFraction);
+		System.out.println(secondComputeFraction);
+		System.out.println(thirdComputeFraction);
+		System.out.println(forthComputeFraction);
+		
+		
+//		while (i < counter) {
+//			
+//		}
+
+	}
+
+}
