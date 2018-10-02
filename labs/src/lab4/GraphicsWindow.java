@@ -11,7 +11,7 @@ public class GraphicsWindow extends JFrame {
 
 	/**
 	 * Launches a GraphicsWindow.
-	 */4
+	 */
 	public static void main(String[] args) {
 		GraphicsWindow g = new GraphicsWindow();
 		g.setSize(400, 400);

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;IteratorPractice.java&apos; to &apos;cs2420-lab/src/lab06&apos;&#x0A;- Original project: &apos;CS 2420 Fall 2017 Assignment 03&apos;&#x0A;- Destination element: &apos;cs2420-lab/src/lab06&apos;&#x0A;- Original element: &apos;assignment03.IteratorPractice.java&apos;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="=cs2420-lab/src&lt;lab06" element1="/src&lt;assignment03{IteratorPractice.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1508516265186" units="1" version="1.0"/>
+</session>

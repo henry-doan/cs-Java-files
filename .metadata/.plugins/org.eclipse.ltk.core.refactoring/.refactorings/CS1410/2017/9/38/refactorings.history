@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Hailstone.java&apos; to &apos;lab04&apos;&#x0A;- Original project: &apos;CS1410&apos;&#x0A;- Destination element: &apos;lab04&apos;&#x0A;- Original element: &apos;assignment02.Hailstone.java&apos;" description="Copy compilation unit" element1="/src&lt;assignment02{Hailstone.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1506132540917" target="/cs2420-lab/src/lab04" units="1" version="1.0"/>
+</session>

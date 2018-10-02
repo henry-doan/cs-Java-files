@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;maze.properties&apos; to &apos;cs2420_spring_Labs&apos;&#x0A;- Original project: &apos;CS2040&apos;&#x0A;- Destination element: &apos;cs2420_spring_Labs&apos;&#x0A;- Original element: &apos;maze.properties&apos;" description="Copy file" destination="=cs2420_spring_Labs" element1="maze.properties" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1517241732784" units="0" version="1.0"/>
+</session>

@@ -1,0 +1,22 @@
+package programmingAssignment2;
+
+import edu.princeton.cs.algs4.StdIn;
+import edu.princeton.cs.algs4.StdOut;
+
+public class Subset {
+
+	public static void main(String[] args) {
+		RandomizedQueue<String> subQueue = new RandomizedQueue<String>();
+		
+		int k = Integer.parseInt(2);
+		
+		while (StdIn.isEmpty() != false) {
+			subQueue.enqueue(StdIn.readString());
+		}
+		
+		for( int index = 0; index < k; index++) {
+			StdOut.println(subQueue.dequeue());
+		}
+	}
+
+}
