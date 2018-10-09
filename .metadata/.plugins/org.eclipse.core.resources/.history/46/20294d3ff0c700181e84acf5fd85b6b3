@@ -1,0 +1,11 @@
+package QuickSort;
+public class QuickSort3Way {
+	public void sort(int[] input) {
+		sort(input, 0, input.length-1);
+	}
+
+	private void sort(int[] input, int lowIndex, int highIndex) {
+		// TODO Auto-generated method stub
+		
+	}
+}

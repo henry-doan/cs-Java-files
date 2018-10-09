@@ -1,61 +1,80 @@
 package m1;
 
-public class Brand {
-	// what all brand should have
-	private String[] branchQueue;
-	private int size;
+/**
+ * Brand object with everything a brand has and methods
+ * that you can call from brand.
+ * 
+ * @author Henry Doan
+ * @version October 4, 2018
+ */
+public class Brand implements  Comparable<Brand>{
+	// what all brands have
+	private String name;
+	private int registrationNumber;
 	
-	/*
-	 * Construct an empty brand array
-	 */
-	public Brand() {
-		size = 0;
-		branchQueue = new String[size];
-	}
-	
-	/*
-	 * Is the brand array empty?
-	 * @return true -- boolean on the size is empty.
-	 * 		   false --- boolean on the array isn't empty
-	 */
-	public boolean isEmpty() {
-		return size == 0;
-	}
-	
-	/*
-	 * Return the number of items on the array
-	 * @return size -- the number capacity of the array.
-	 */
-	public int size() {
-		return size;
-	}
-	
-	/*
-	 * Resize the underlying array holding the elements 
-	 * Method from https://www.youtube.com/watch?v=GNr872PjQMI
-	 * he said we can use.
+	/**
+	 * set the brand name and number to the incoming information.
 	 * 
-	 * @author Robert Sedgewick & Kevin Wayne
-	 * @param capacity -- int that is the capacity of the queue.
+	 * @param name -- string of the incoming name for the brand.
+	 * 		  registrationNumber -- integer of the incoming registration number for the brand.
 	 */
-	private void resize(int capacity) {
-		assert capacity >= size;
-		
-		// create new array
-		@SuppressWarnings("unchecked")
-		Item[] temp = (Item[]) new Object[capacity];
-		
-		// copy items over
-		for (int i = 0; i < size; i++) {
-			temp[i] = itemQueue[i];
-		}
-		
-		// reassign the queue
-		itemQueue = temp;
+	public Brand(String name, int registrationNumber) {
+		this.name = name;
+		this.registrationNumber = registrationNumber; // trade mark registration number
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	/**
+	 * Returns the name of this brand.
+	 * 
+	 * @return name -- string of the name of the brand.
+	 */
+	public String getName() {
+		return name;
+	}
+	
+	/**
+	 * Returns the registration number of this brand.
+	 * 
+	 * @return registrationNumber -- integer of the registration number of the brand.
+	 */
+	public int getRegistrationNumber() {
+		return registrationNumber;
 	}
 
+	/**
+	 * An override method that will have a string of the brand.
+	 * 
+	 * @return a string of the brand name and registration number.
+	 */
+	@Override
+	public String toString() {
+		return String.format("%-10s#%d", name, registrationNumber);
+	}
+
+	/**
+	 * An override compare two brands together with ascending
+	 * order of the brands names.
+	 * 
+	 * @return a number of order that the current brand is base on the compared to brand.
+	 */
+	@Override
+	public int compareTo(Brand o) {
+		// get the names of the brands
+		String a = this.getName();
+		String b = o.getName();
+		
+		// compare the names
+		int compare = a.compareToIgnoreCase(b);
+
+		// return the order
+		return compare;
+	}	
+
+	/**
+	 * A helper method that converts the brand name to upper case.
+	 * 
+	 */
+	public void uppercaseName() {
+		name = name.toUpperCase();
+	}
 }

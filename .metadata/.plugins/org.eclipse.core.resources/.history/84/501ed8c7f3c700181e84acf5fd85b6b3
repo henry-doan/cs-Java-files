@@ -1,0 +1,168 @@
+package m1;
+
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+
+import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.StdRandom;
+
+public class Midterm1 {
+	private static Brand[] brands = {
+			new Brand("Nike", 1441334),	
+			new Brand("adidas", 3686084),	
+			new Brand("Microsoft", 1200236),	
+			new Brand("lenovo", 3226026),	
+			new Brand("SAMSUNG", 3503660),	
+			new Brand("nook", 4286950),
+			new Brand("IBM", 2183815)
+	};
+	
+	private static int size;
+	
+	public static void main(String[] args) {
+		
+		
+		StdOut.println("Brands:");
+		StdOut.println("=======");
+		printBrands(brands);
+		
+		
+		// = = = =  Part 1	= = = = 	
+		size = brands.length;
+		sort(brands); 
+		
+		StdOut.println("Brands by name:");
+		StdOut.println("===============");
+		printBrands(brands);
+		
+
+		// = = = =  Part 2a  = = = = 	
+
+				
+		
+		// = = = =  Part 2b  = = = = 
+
+		StdOut.println("Names in reverse order:");
+		StdOut.println("=======================");
+		
+
+	}
+
+	/** 
+	 * Prints all the elements of array brands side by side, separated by a single blank.
+	 * @param brands
+	 */
+	private static void printBrands(Brand[] brands) {
+		for(Brand c : brands) {
+			StdOut.println(c);
+		}	
+		System.out.println();
+	}
+	
+//
+//	/*
+//	 * Return an independent iterator over items in order.
+//	 */
+//	@Override
+//	public Iterator<Brand> iterator() {
+//		return new InOrderIterator();
+//	}
+//	
+//	private class InOrderIterator implements Iterator<Brand> {
+//		private int iteratorSize = size;
+//		private Brand[] copyOfArr;
+//		
+//		/*
+//		 * Construct a copy of the queue and size.
+//		 */
+//		private InOrderIterator() {
+//			copyOfArr = (Brand[]) new Object[iteratorSize];
+//			for (int index = 0; index < iteratorSize; index++) {
+//				copyOfArr[index] = brands[index];
+//			}
+//		}
+//		
+//		/*
+//		 * Override method to see if the item has next.
+//		 * 
+//		 * @return false -- boolean if there is no next item.
+//		 *         true -- boolean if there is a next item.
+//		 */
+//		@Override
+//		public boolean hasNext() {
+//			return iteratorSize > 0;
+//		}
+//		
+//		/*
+//		 * Override method to go to the next item.
+//		 * 
+//		 * @return nextItem -- Item  that is next
+//		 * @throw NoSuchElementException -- there is no next element
+//		 */
+//		@Override
+//		public Brand next() {
+//			if(hasNext() == false) {
+//				throw new NoSuchElementException("no more items to go next to");
+//			}
+//			
+//			int randomIndexFromQueue = StdRandom.uniform(iteratorSize);
+//			Brand nextItem = copyOfArr[randomIndexFromQueue];
+//			
+//			if (randomIndexFromQueue != size - 1) {
+//				copyOfArr[randomIndexFromQueue] = copyOfArr[iteratorSize - 1];
+//			}
+//			
+//			copyOfArr[--iteratorSize] =  null;
+//			return nextItem;
+//		}
+//		
+//		/*
+//		 * Override method to not to be able to call this method
+//		 * @throw UnsupportedOperationException -- when you call on this method
+//		 */
+//		@Override
+//		public void remove() {
+//			throw new UnsupportedOperationException("You should not call remove");
+//		}
+//		
+//	}
+	
+	public static Brand[] sort(Brand[] arr) {
+		int size = arr.length;
+		
+		Brand[] tempArr = new Brand[size];
+		
+		for (int i = 0; i < size ; i++) {
+			tempArr[i] = arr[i];
+		}
+		
+		Arrays.sort(tempArr, new Comparator<Brand>() {
+			@Override
+			public int compare(Brand b1, Brand b2) {
+				return Brand.compare(b1.getName(), b2.getName())
+			}
+		});
+		arr = tempArr;
+		
+//		for (int i = 0; i < size; i++) {
+//			int min = i;
+//		
+//		
+//			for (int j = i + 1; j < size; j++) {
+//				if (lessCompare(arr[j], arr[min])) {
+//					min = j;
+//					Brand smaller = arr[i];
+//					arr[i] = arr[j];
+//					arr[j] = smaller;
+//				}
+//			}
+//		}
+//		return arr;
+	}
+
+	private static boolean lessCompare(Brand brand1, Brand brand2) {
+		return brand1.compareTo(brand2) > 0;
+	}
+
+}
