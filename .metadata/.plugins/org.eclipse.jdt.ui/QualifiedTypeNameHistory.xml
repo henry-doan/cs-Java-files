@@ -34,7 +34,6 @@
 <fullyQualifiedTypeName name="java.util.Random"/>
 <fullyQualifiedTypeName name="org.jfree.chart.ChartUtilities"/>
 <fullyQualifiedTypeName name="java.lang.reflect.Array"/>
-<fullyQualifiedTypeName name="java.util.Comparator"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.util.List"/>
@@ -46,7 +45,6 @@
 <fullyQualifiedTypeName name="java.awt.Canvas"/>
 <fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdStats"/>
 <fullyQualifiedTypeName name="edu.princeton.cs.algs4.WeightedQuickUnionUF"/>
-<fullyQualifiedTypeName name="edu.princeton.cs.algs4.In"/>
 <fullyQualifiedTypeName name="java.security.SecureRandom"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
@@ -54,10 +52,12 @@
 <fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdRandom"/>
 <fullyQualifiedTypeName name="java.util.Stack"/>
 <fullyQualifiedTypeName name="java.util.Queue"/>
-<fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdOut"/>
-<fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdIn"/>
-<fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="edu.princeton.cs.algs4.Stack"/>
 <fullyQualifiedTypeName name="edu.princeton.cs.algs4.Queue"/>
+<fullyQualifiedTypeName name="java.util.Comparator"/>
+<fullyQualifiedTypeName name="java.util.Arrays"/>
+<fullyQualifiedTypeName name="edu.princeton.cs.algs4.In"/>
+<fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdIn"/>
+<fullyQualifiedTypeName name="edu.princeton.cs.algs4.StdOut"/>
 </qualifiedTypeNameHistroy>

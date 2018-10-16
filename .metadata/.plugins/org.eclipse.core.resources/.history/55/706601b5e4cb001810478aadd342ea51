@@ -1,0 +1,110 @@
+package ac;
+
+import java.util.Comparator;
+
+/*
+ * An Immutable data type that is a auto complete term.
+ * This class also compares terms in three orders.
+ * 
+ * @author Henry Doan
+ * @version October 9, 2018
+ */
+public class Term implements Comparable<Term> {
+	private String termQuery;
+	private double termWeight;
+	
+	/*
+	 * Initialize a term with the given query 
+	 * string and weight.
+	 * 
+	 * @param query --
+	 *        weight --
+	 * 
+	 */
+	public Term(String query, double weight) {
+		if (query == null) {
+			throw new java.lang.NullPointerException();
+		}
+		
+		if (weight < 0) {
+			throw new java.lang.IllegalArgumentException();
+		}
+		
+		termQuery = query;
+		termWeight = weight;
+	}
+	
+	/*
+	 * Compare the terms in descending order by weight.
+	 * 
+	 * @return 
+	 */
+	public static Comparator<Term> byReverseWeightOrder(){
+		 return new Comparator<Term>(){
+			 public int compare(Term v, Term w) {
+				 double vweight = v.termWeight;
+				 double wweight = w.termWeight;
+				 
+				 if ( vweight > wweight) {
+					 return -1;
+				 }				
+				 
+				 if (vweight == wweight) {
+					return 0;
+				 }
+				 
+				 return 1;
+				 
+	         } 
+	     };
+	}
+	
+	/*
+	 * Compare the terms in lexicographic order but using 
+	 * only the first r characters of each query.
+	 * 
+	 * @param r --
+	 * @return 
+	 */
+	public static Comparator<Term> byPrefixOrder(int r) {
+		return new Comparator<Term>(){
+			public int compare(Term v, Term w) {
+				String vquery = v.termQuery;
+				String wquery = w.termQuery;
+				 
+				// compare the names
+				int compare = vquery.compareToIgnoreCase(wquery);
+
+				// return the order
+				return compare;
+				 
+	         } 
+	     };
+		
+	}
+	
+	/*
+	 *  Compare the terms in lexicographic order by query.
+	 * 
+	 * @param that --
+	 * @return 
+	 */
+	@Override
+	public int compareTo(Term that) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	/*
+	 * Return a string representation of the term in the following 
+	 * format: the weight, followed by a tab, followed by the 
+	 * query.
+	 * 
+	 * @return result -- a string with the correct format.
+	 */
+	public String toString() {
+		String result = termWeight + "\t" + termQuery;
+		return result;
+		
+	}
+}
