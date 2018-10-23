@@ -1,0 +1,11 @@
+package priorityQueues;
+import java.util.PriorityQueue;
+
+public class CreatePriorityQueueStringExample {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

@@ -1,0 +1,56 @@
+package bst;
+
+public class BSTDelete {
+	
+	class Node {
+		int key;
+		Node left, right;
+	 
+		public Node(int item) {
+			key = item;
+			left = right = null;
+		}
+	}
+	
+	Node root;
+	
+	BSTDelete() {
+		root = null;
+	}
+	
+	void deleteKey(int key) {
+		root = deleteRec(root, key);
+	} 
+	
+	Node deleteRec(Node root, int key) {
+		if (root == null) return root; 
+		
+		if (key < root.key)
+			root.left = deleteRec(root.left, key);
+		else if (key > root.key)
+			root.right = deleteRec(root.right, key); 
+		
+		else {
+			if (root.left == null)
+				return root.right;
+			else if (root.right == null) 
+				return root.left;
+
+			root.key = minValue(root.right);
+
+			root.right = deleteRec(root.right, root.key);
+		} 
+		return root;
+	}
+
+	int minValue(Node root) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

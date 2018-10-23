@@ -1,0 +1,29 @@
+package bst;
+
+public class BinarySearchTree {
+	class Node {
+		 int key;
+		 Node left, right;
+		 
+		 public Node(int item) {
+			 key = item;
+			 left = right = null;
+		 }
+	} 
+	
+	Node root;
+	
+	BinarySearchTree() {
+		root = null;
+	}
+	
+	void insert(int key) {
+		root = insertRec(root, key);
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
