@@ -3,7 +3,7 @@
  *  NetID:    
  *  Precept:  
  *
- *  Partner Name:       
+ *  Partner Name:  Jeneve Castro, Tatiana Nicoara, Dimitar Ivanov     
  *  Partner NetID:      
  *  Partner Precept:    
  *
@@ -17,7 +17,7 @@ Programming Assignment 4: Slider Puzzle
 /******************************************************************************
  *  Explain briefly how you implemented the Board data type.
  *****************************************************************************/
-
+Created a virtual board  with the needed methods
 
 
 
@@ -25,7 +25,9 @@ Programming Assignment 4: Slider Puzzle
  *  Explain briefly how you represented a search node
  *  (board + number of moves + previous search node).
  *****************************************************************************/
-
+A Block, contains a board, number of moves to get to that board, and the 
+previous board. the previous board traces up to give the full solution and 
+with the priority queue.
 
 
 
@@ -43,7 +45,7 @@ Programming Assignment 4: Slider Puzzle
  *****************************************************************************/
 
 Description:
-
+isSolvable() counts the number of inversions seeing if everything is in place.
 
 
 Order of growth of running time:
@@ -82,8 +84,8 @@ Order of growth of running time:
  *  or a better priority function (say, one on the order of improvement
  *  from Hamming to Manhattan)? Why?
  *****************************************************************************/
-
-
+I think a faster and more memory computer will handle anything with the same algorthims.
+But with current computer you would need a better priority function to solve it
 
 
 
@@ -91,7 +93,7 @@ Order of growth of running time:
 /******************************************************************************
  *  Known bugs / limitations.
  *****************************************************************************/
-
+Couldn't test the puzzle text files.
 
 
 /******************************************************************************
@@ -100,7 +102,8 @@ Order of growth of running time:
  *  include any help from people (including course staff, lab TAs,
  *  classmates, and friends) and attribute them by name.
  *****************************************************************************/
-
+Jeneve Castro, Tatiana Nicoara, Dimitar Ivanov helped a lot and spliting up the 
+program and algorithms.
 
 
 
@@ -108,6 +111,7 @@ Order of growth of running time:
 /******************************************************************************
  *  Describe any serious problems you encountered.                    
  *****************************************************************************/
+Couldn't test the puzzle text files.
 
 
 
@@ -116,7 +120,8 @@ Order of growth of running time:
  *  the protocol as described on the assignment page. Give one
  *  sentence explaining what each of you contributed.
  *****************************************************************************/
-
+Jeneve Castro, Tatiana Nicoara, Dimitar Ivanov we all did the same amount of work and
+split the task and worked on different parts of the assignments
 
 
 

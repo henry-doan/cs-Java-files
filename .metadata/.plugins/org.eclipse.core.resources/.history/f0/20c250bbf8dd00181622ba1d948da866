@@ -1,0 +1,92 @@
+package ep;
+
+import edu.princeton.cs.algs4.MinPQ;
+
+/*
+ * An immutable data type that solves the 8 puzzle.
+ * 
+ * @author Henry Doan
+ * @version October 23, 2018
+ */
+public class Solver {
+	private Board workBoard;
+	 
+	private class Block implements Comparable<Block> {
+		public Block previous;
+		public Board board;
+		public int numMoves = 0;
+		
+		public Block(Board incommingBoard) {
+			board = incommingBoard;
+		}
+		
+		public Block(Board incommngBoard, Block prev) {
+			board = incommngBoard;
+			previous = prev;
+			numMoves = previous.numMoves++;
+		}
+		
+		@Override
+		public int compareTo(Block b) {
+			int diffOfBoardsManhattan = board.manhattan() - b.board.manhattan();
+			int diffOfMoves = numMoves - b.numMoves;
+			int sumOfMovesAndManhattan = diffOfBoardsManhattan + diffOfMoves;
+			return sumOfMovesAndManhattan; 
+		} 
+	}
+	
+	/*
+	 * Find a solution to the initial board (using the A* algorithm)
+	 */
+	private Block lastBlock;
+
+	public Solver(Board initial) {
+		if (initial == null) {
+			throw new java.lang.NullPointerException();
+		}
+		 
+		workBoard = initial;
+		 
+		if (workBoard.isSolvable() == false) {
+			throw new java.lang.IllegalArgumentException();
+		}
+		
+		MinPQ<lastBlock> blocks = new MinPQ<Block>();
+	 }
+	
+
+	 
+	/*
+	 * Min number of moves to solve initial board.
+	 * 
+	 * @return int number of moves to solve with the manhattan.
+	 */
+	 public int moves()	{
+		 if (workBoard.isSolvable()) {
+			 lastBlock.numMoves;
+		 }
+		 else {
+			 return -1;
+		 }
+		
+	 }
+	 
+	/*
+	 * Sequence of boards in a shortest solution.
+	 * 
+	 * @return  -- boards to the shortest solution.
+	 */	 
+	 public Iterable<Board> solution() {
+		return null;
+		 
+	 }
+	 
+	/*
+	 * Solve a slider puzzle.
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
