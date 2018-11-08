@@ -5,8 +5,8 @@ import edu.princeton.cs.algs4.LinkedStack;
 /*
  * An immutable data type that represents the board for the 8 puzzle.
  * 
- * @author Henry Doan
- * @version November 3, 2018
+ * @author Henry Doan, Jeneve Castro, Tatiana Nicoara, Dimitar Ivanov   
+ * @version November 8, 2018
  */
 public class Board {
 	private int boardSize;

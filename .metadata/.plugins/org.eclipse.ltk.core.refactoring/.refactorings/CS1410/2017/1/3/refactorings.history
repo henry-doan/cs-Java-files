@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Inline local variable &apos;assignment01.CircleArea.welcome().radiusInput&apos; in &apos;assignment01.CircleArea.welcome()&apos;&#x0A;- Original project: &apos;CS1410&apos;&#x0A;- Original element: &apos;assignment01.CircleArea.welcome().radiusInput&apos;" description="Inline local variable &apos;radiusInput&apos;" id="org.eclipse.jdt.ui.inline.temp" input="/src&lt;assignment01{CircleArea.java" selection="267 36" stamp="1484628222443" version="1.0"/>
-</session>

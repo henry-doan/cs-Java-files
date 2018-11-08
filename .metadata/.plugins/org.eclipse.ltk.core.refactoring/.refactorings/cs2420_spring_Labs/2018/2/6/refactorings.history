@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Rename package &apos;comparator&apos; to &apos;comparisons&apos;&#x0A;- Original project: &apos;cs2420_spring_Labs&apos;&#x0A;- Original element: &apos;cs2420_spring_Labs/src/comparator&apos;&#x0A;- Renamed element: &apos;cs2420_spring_Labs/src/comparisons&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;comparator&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;comparator" name="comparisons" qualified="false" references="true" stamp="1517841610110" textual="false" version="1.0"/>
-</session>

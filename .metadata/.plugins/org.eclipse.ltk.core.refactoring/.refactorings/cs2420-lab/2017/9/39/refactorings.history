@@ -1,4 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">
-<refactoring comment="Extract local variable &apos;compareTo&apos; from expression &apos;lhs.major.compareTo(rhs.major)&apos;&#x0A;- Original project: &apos;cs2420-lab&apos;&#x0A;- Variable name: &apos;compareTo&apos;&#x0A;- Destination method: &apos;lab05.ComparatorPractice.main().new Comparator() {...}.compare()&apos;&#x0A;- Variable expression: &apos;lhs.major.compareTo(rhs.major)&apos;&#x0A;- Replace occurrences of expression with variable" description="Extract local variable &apos;compareTo&apos;" final="false" id="org.eclipse.jdt.ui.extract.temp" input="/src&lt;lab05{ComparatorPractice.java" name="compareTo" replace="true" selection="1773 30" stamp="1506701230956" version="1.0"/>
-</session>
