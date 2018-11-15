@@ -18,6 +18,7 @@ public class BlackFilter {
 			String word = StdIn.readString();
 			if(!set.contains(word)) StdOut.println(word);
 		}
+		
 	}
 
 }
