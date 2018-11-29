@@ -40,28 +40,73 @@ public class KdTreeST<Value> {
 		if (pt == null || val == null) {
 		throw new NullPointerException();
 	}
-		root = put(root, pt, val);
+		root = put(null, root, pt, val, true);
 	}
 	
-	private Node put(Node n, Point2D pt, Value val) {
-		boolean horiz = false;
-		if (horiz) {
-			if (n.pt.x() > pt.x()) {
-				n.lt = put(n.lt, pt, val);
-			} else {
-				n.rt = put(n.rt, pt, val);
-			}
+	private Node put(Node prev, Node n, Point2D pt, Value val, boolean isVt) {
+		if (n == null) {
+			size++;
+			return new Node(pt, val, createRect(n, pt, isVt));
+		}
+		
+		double com = ptcompare(n, pt, isVt);
+
+		if (com < 0 ) {
+			n.lt = put(n, n.lt, pt, val, !isVt);
+		} else if (com > 0 ) {
+			n.rt = put(n, n.rt, pt, val, !isVt);
+		} else if (n.pt.equals(pt)) {
+			n.val = val;
 		} else {
-			if (n.pt.y() > pt.y()) {
-				n.lt = put(n.lt, pt, val);
-			} else {
-				n.rt = put(n.rt, pt, val);
-			}
+			n.rt = put(n, n.rt, pt, val, !isVt);
 		}
 		
 		return n;
 	}
 	
+	private RectHV createRect(Node n, Point2D pt, boolean isVt) {
+		double neg = -Double.MAX_VALUE;
+		double pos = Double.MAX_VALUE;
+		
+		if (n == null) {
+			return new RectHV(neg, neg, pos, pos);
+		}
+		
+		double com = ptcompare(n, pt, !isVt);
+		double rectXMin = n.rect.xmin();
+		double rectXMax = n.rect.xmax();
+		double rectYMin = n.rect.ymin();
+		double rectYMax = n.rect.ymax();
+		double y = n.pt.y();
+		double x = n.pt.x();
+		
+		if (isVt && com < 0 ) {
+			return new RectHV(rectXMin, rectYMin, rectXMax, y);
+		}
+		
+		if (!isVt && com < 0 ) {
+			return new RectHV(rectXMin, rectYMin, x, rectYMax);
+		}
+		
+		if (isVt && com >= 0 ) {
+			return new RectHV(rectXMin, y, rectXMax, rectYMax);
+		}
+		
+		if (!isVt && com >= 0 ) {
+			return new RectHV(x, rectYMin, rectXMax, rectYMax);
+		}
+		
+		return null;
+	}
+
+	private double ptcompare(Node n, Point2D pt, boolean b) {
+		if (b) {
+			return pt.x() - n.pt.x();
+		} else {
+			return pt.y() - n.pt.y();
+		}
+	}
+
 	public Value get(Point2D pt) {
 		if (pt == null) {
 			throw new NullPointerException();
