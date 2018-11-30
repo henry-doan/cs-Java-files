@@ -6,6 +6,12 @@ import edu.princeton.cs.algs4.Queue;
 import edu.princeton.cs.algs4.RectHV;
 import edu.princeton.cs.algs4.RedBlackBST;
 
+/*
+ * An mutable data type that is symbol table with Point2D.
+ * 
+ * @author Henry Doan
+ * @version November 30, 2018
+ */
 public class PointST<Value> {
 	// what all PointST have
 	private RedBlackBST<Point2D, Value> rbbst;
@@ -34,7 +40,7 @@ public class PointST<Value> {
 	}
 	 
 	/*
-	 * Return number of points 
+	 * Return number of points. 
 	 * 
 	 * @return numOfPoints -- the number of Points
 	 */
@@ -43,7 +49,7 @@ public class PointST<Value> {
 	}
 	
 	/*
-	 * Associate the value val with point p
+	 * Associate the value val with point p.
 	 * 
 	 * @params p -- point2D that we are looking at.
 	 * 		   val -- the value of the point
@@ -59,7 +65,7 @@ public class PointST<Value> {
 	}    
 	
 	/*
-	 * Value associated with point p 
+	 * Value associated with point p. 
 	 * 
 	 * @params p -- point2D that we are looking at.	 
 	 * @return the value from the given point.
@@ -92,7 +98,7 @@ public class PointST<Value> {
 	}
 	
 	/*
-	 * All points in the symbol table 
+	 * All points in the symbol table.
 	 * 
 	 * @return all the points in the table
 	 */
@@ -102,9 +108,10 @@ public class PointST<Value> {
 	}
 	
 	/*
-	 * All points that are inside the rectangle 
+	 * All points that are inside the rectangle.
 	 * 
-	 * return pts -- queue of all the pts in the rectangle
+	 * @params rect -- rectangle we are looking at.
+	 * @return rangePts -- all the points in the rectangle.
 	 * @throw nullPointerException if the params are null
 	 */
 	public Iterable<Point2D> range(RectHV rect) {
@@ -130,7 +137,7 @@ public class PointST<Value> {
 	}
 	
 	/*
-	 * A nearest neighbor to point p; null if the symbol table is empty 
+	 * A nearest neighbor to point p, null if the symbol table is empty. 
 	 * 
 	 * @params p -- point2D that we are looking at.
 	 * @return null -- if the table is empty.
@@ -147,7 +154,7 @@ public class PointST<Value> {
 			return null;
 		}
 		
-		// Initially have a default distance and neighbor be the max of the table for now.
+		// Initially have a default distance and neighbor be the max of the table for now
 		double distance = rbbst.max().distanceTo(p);
 		Point2D neighbor = rbbst.max();
 		
@@ -169,7 +176,15 @@ public class PointST<Value> {
 	 * Unit testing of the methods (not graded) 
 	 */
 	public static void main(String[] args) {
-		
+		 String filename = args[0];
+	     In in = new In(filename);
+	     PointST<Integer> kdtree = new PointST<Integer>();
+	     for (int i = 0; !in.isEmpty(); i++) {
+	    	 double x = in.readDouble();
+	         double y = in.readDouble();
+	         Point2D p = new Point2D(x, y);
+	         kdtree.put(p, new Integer(i)); 
+	     }
 	}
 
 }
