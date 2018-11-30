@@ -18,16 +18,21 @@ Programming Assignment 5: Kd-Trees
  *  Describe the Node data type you used to implement the
  *  2d-tree data structure.
  *****************************************************************************/
+The node has some attributes such as the pts, value, the left and right nodes
+and the rectangle. There is a constructor to create a new node with points, value
+and a rectangle.
 
 /******************************************************************************
  *  Describe your method for range search in a kd-tree.
  *****************************************************************************/
-
+Look in the rectangle, and add all the points in the rectangle to a queue, then
+return the queue.
 
 /******************************************************************************
  *  Describe your method for nearest neighbor search in a kd-tree.
  *****************************************************************************/
-
+This search for all the points and then calculate the distance from two points, until
+there are no more points to look at, return the nearest point.
 
 /******************************************************************************
  *  How many nearest neighbor calculations can your brute-force
@@ -43,10 +48,9 @@ Programming Assignment 5: Kd-Trees
                        calls to nearest() per second
                      brute force               2d-tree
                      ---------------------------------
-input100K.txt
+input100K.txt           153                    439234
 
-input1M.txt
-
+input1M.txt              8                     149335
 
 
 /******************************************************************************
@@ -72,7 +76,8 @@ none.
  *  the protocol as described on the assignment page. Give one
  *  sentence explaining what each of you contributed.
  *****************************************************************************/
-
+We all have equal contribution on working on the projects and ideas for the 
+solution.
 
 
 
