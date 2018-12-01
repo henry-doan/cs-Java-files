@@ -3,7 +3,7 @@
  *  NetID:    
  *  Precept:  
  *
- *  Partner Name:       
+ *  Partner Name:  Jeneve Castro, Tatiana Nicoara, Dimitar Ivanov      
  *  Partner NetID:      
  *  Partner Precept:    
  *
@@ -64,7 +64,8 @@ none.
  *  include any help from people (including course staff, lab TAs,
  *  classmates, and friends) and attribute them by name.
  *****************************************************************************/
-
+Jeneve Castro, Tatiana Nicoara, Dimitar Ivanov we all did the same amount of work and
+split the task and worked on different parts of the assignments
 
 /******************************************************************************
  *  Describe any serious problems you encountered.                    
