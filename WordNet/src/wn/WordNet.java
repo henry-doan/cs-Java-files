@@ -1,20 +1,21 @@
 package wn;
 
 /*
- *  An immutable data type of WordNet groups words into 
- *  sets of synonyms called synsets and describes semantic relationships 
- *  between them. The class connects a hyponym to a hypernym and some helper
- *  method to inform us about the word net.
- *  @author Henry Doan
+ * An immutable data type of WordNet groups words into 
+ * sets of synonyms called synsets and describes semantic relationships 
+ * between them. The class connects a hyponym to a hypernym and some helper
+ * method to inform us about the word net.
+ * 
+ * @author Henry Doan
  */
 public class WordNet {
 	 /* 
 	  * Constructor takes the name of the two input files.
 	  * 
-	  * @param synsets - string of synssets file.
-	  *         hypernym - string of hypernyms file.
-	  * @throws NullPointerException -  if any argument is null or an empty string.
-	  *         IllegalArgumentException - if the input does not correspond to a rooted DAG.
+	  * @param synsets -- string of synssets file.
+	  *         hypernym -- string of hypernyms file.
+	  * @throws NullPointerException --  if any argument is null or an empty string.
+	  *         IllegalArgumentException -- if the input does not correspond to a rooted DAG.
 	  */
 	 public WordNet(String synsets, String hypernyms) {
 		 if (synsets == "" || synsets == null || hypernyms == null || hypernyms == "" ) {
@@ -26,7 +27,7 @@ public class WordNet {
 	 /*
 	  * Returns all WordNet nouns.
 	  * 
-	  * @return - all ths nows in the word net.
+	  * @return -- all ths nows in the word net.
 	  */
 	 public Iterable<String> nouns() {
 		return null;
@@ -36,10 +37,10 @@ public class WordNet {
 	 /* 
 	  * Is the word a WordNet noun?
 	  * 
-	  * @param word - a string of the checking.
-	  * @return true - if word is a noun.
-	  *         false - if word is not a noun.
-	  * @throws NullPointerException -  if any argument is null or an empty string.
+	  * @param word -- a string of the checking.
+	  * @return true -- if word is a noun.
+	  *         false -- if word is not a noun.
+	  * @throws NullPointerException -- if any argument is null or an empty string.
 	  */
 	 public boolean isNoun(String word) {
 		 if (word == "" || word == null) {
@@ -52,11 +53,11 @@ public class WordNet {
 	 /* 
 	  * Distance between nounA and nounB (defined below)
 	  * 
-	  * @param nounA - string, the first noun we are comparing to.
-	  *         nounB - string, the second noun we are comparing to.  
-	  * @return  - the distance between the two nouns.
-	  * @throws NullPointerException -  if any argument is null or an empty string.
-	  *         IllegalArgumentException - unless both of the noun arguments are WordNet nouns.
+	  * @param nounA -- string, the first noun we are comparing to.
+	  *         nounB -- string, the second noun we are comparing to.  
+	  * @return  -- the distance between the two nouns.
+	  * @throws NullPointerException -- if any argument is null or an empty string.
+	  *         IllegalArgumentException -- unless both of the noun arguments are WordNet nouns.
 	  */
 	 public int distance(String nounA, String nounB) {
 		 if (nounA == "" || nounA == null || nounB == null || nounB == "" ) {
@@ -71,11 +72,11 @@ public class WordNet {
 	  * the common ancestor of nounA and nounB
 	  * in a shortest ancestral path (defined below).
 	  * 
-	  * @param nounA - string, the first common ancestor.
-	  *         nounB - string, the second common ancestor.     
-	  * @return  - the shortest ancestral path between the two nouns.
-	  * @throws NullPointerException -  if any argument is null or an empty string.
-	  *         IllegalArgumentException - unless both of the noun arguments are WordNet nouns.
+	  * @param nounA -- string, the first common ancestor.
+	  *         nounB -- string, the second common ancestor.     
+	  * @return  -- the shortest ancestral path between the two nouns.
+	  * @throws NullPointerException -- if any argument is null or an empty string.
+	  *         IllegalArgumentException -- unless both of the noun arguments are WordNet nouns.
 	  */
 	 public String sap(String nounA, String nounB) {
 		 if (nounA == "" || nounA == null || nounB == null || nounB == "" ) {
