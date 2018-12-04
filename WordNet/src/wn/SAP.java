@@ -12,20 +12,25 @@ import edu.princeton.cs.algs4.Digraph;
  *  @author Henry Doan
  */
 public class SAP {
+	private Digraph digraph;
+
 	/*
-	 *  Constructor takes a digraph (not necessarily a DAG).
+	 * Constructor takes a digraph (not necessarily a DAG).
 	 *  
-	 *  @param G - a digraph.
+	 * @param G - a digraph.
+	 * @throws NullPointerException - if any argument is null.
 	 */
 	public SAP(Digraph G) {
-		
+		if (G == null) {
+			 throw new NullPointerException();
+		 }
 	}
 
 	/*
-	 *  Is the digraph a directed acyclic graph?
+	 * Is the digraph a directed acyclic graph?
 	 *  
-	 *  @return true - the digraph is a directed acyclic graph.
-	 *          false - the digraph is not a directed acyclic graph.
+	 * @return true - the digraph is a directed acyclic graph.
+	 *         false - the digraph is not a directed acyclic graph.
 	 */
 	public boolean isDAG() {
 		return false;
@@ -48,8 +53,12 @@ public class SAP {
 	 * @param v - int point in the graph.
 	 *        w - int point in the graph.
 	 * @return - the length of the shortest ancestral path.
+	 * @throws IndexOutOfBoundsException - if the argument is not in the range of 0 and digraph v - 1.
 	 */
 	public int length(int v, int w) {
+		if (v < 0 || v > digraph.V() - 1 || w < 0 || w > digraph.V() - 1 ) {
+			throw new IndexOutOfBoundsException();
+		}
 		return w;	
 	}
 
@@ -61,8 +70,12 @@ public class SAP {
 	 *        w - int point in the graph.
 	 * @return - the common ancestor.
 	 *         -1 - if there is no such path.
+	 * @throws IndexOutOfBoundsException - if the argument is not in the range of 0 and digraph v - 1.
 	 */
 	public int ancestor(int v, int w) {
+		if (v < 0 || v > digraph.V() - 1 || w < 0 || w > digraph.V() - 1 ) {
+			throw new IndexOutOfBoundsException();
+		}
 		return -1;
 	}
 
@@ -74,8 +87,26 @@ public class SAP {
 	 *        w - int vertex in the graph.
 	 * @return - the common ancestor.
 	 *         -1 - if there is no such path.
+	 * @throws NullPointerException - if any argument is null.
+	 * 		   IndexOutOfBoundsException - if the argument is not in the range of 0 and digraph v - 1.
 	 */
 	public int length(Iterable<Integer> v, Iterable<Integer> w) {
+		if (v == null || w == null) {
+			throw new NullPointerException();
+		}
+		
+		for (Integer i : v) {
+			if (i < 0 || i > digraph.V() - 1 ) {
+				throw new IndexOutOfBoundsException();
+			}
+        }
+		
+		for (Integer i : w) {
+			if (i < 0 || i > digraph.V() - 1 ) {
+				throw new IndexOutOfBoundsException();
+			}
+        }
+		
 		return -1;
 		
 	}
@@ -88,8 +119,26 @@ public class SAP {
 	 *        w - int vertex in the graph.
 	 * @return - the common ancestor.
 	 *         -1 - if there is no such path.
+	 * @throws NullPointerException - if any argument is null.
+	 * 		   IndexOutOfBoundsException - if the argument is not in the range of 0 and digraph v - 1.
 	 */
 	public int ancestor(Iterable<Integer> v, Iterable<Integer> w) {
+		if (v == null || w == null) {
+			throw new NullPointerException();
+		}
+		
+		for (Integer i : v) {
+			if (i < 0 || i > digraph.V() - 1 ) {
+				throw new IndexOutOfBoundsException();
+			}
+        }
+		
+		for (Integer i : w) {
+			if (i < 0 || i > digraph.V() - 1 ) {
+				throw new IndexOutOfBoundsException();
+			}
+        }
+		
 		return -1;
 		
 	}
