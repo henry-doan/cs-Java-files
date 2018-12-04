@@ -147,7 +147,7 @@ public class SAP {
 	}
 
 	/*
-	 * Do unit testing of this class.
+	 * Loads up the files and start the sap process.
 	 */
 	public static void main(String[] args) {
 	    In in = new In(args[0]);
