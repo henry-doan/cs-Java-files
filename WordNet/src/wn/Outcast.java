@@ -1,5 +1,8 @@
 package wn;
 
+import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.StdOut;
+
 /*
  * An immutable data type that given a list of word net nouns
  * identify an outcast noun that is the least related to the 
@@ -28,9 +31,16 @@ public class Outcast {
 		return null;
 	}
 
+	/*
+	 * Loads up a file and start the outcast process.
+	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	    WordNet wordnet = new WordNet(args[0], args[1]);
+	    Outcast outcast = new Outcast(wordnet);
+	    for (int t = 2; t < args.length; t++) {
+	        In in = new In(args[t]);
+	        String[] nouns = in.readAllStrings();
+	        StdOut.println(args[t] + ": " + outcast.outcast(nouns));
+	    }
 	}
-
 }
