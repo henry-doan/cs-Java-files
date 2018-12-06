@@ -18,6 +18,8 @@ Programming Assignment 6: WordNet
  *  Describe concisely the data structure(s) you used to store the 
  *  information in synsets.txt. Why did you make this choice?
  *****************************************************************************/
+	We used two Separate Chaining Hash Symbol Tables because for the helper 
+	methods it provided.
 
 
 
@@ -25,7 +27,8 @@ Programming Assignment 6: WordNet
  *  Describe concisely the data structure(s) you used to store the 
  *  information in hypernyms.txt. Why did you make this choice?
  *****************************************************************************/
-
+ 	Hypernymns data was stored in a Digraph to display the correct
+ 	representation of the nouns lists.
 
 
 /******************************************************************************
@@ -36,12 +39,13 @@ Programming Assignment 6: WordNet
  *  number of edges E in the digraph?
  *****************************************************************************/
 
-Description:
+Description: The isRootedDAG method checks the digraph is a DAG and
+the paths of the vertices.
 
 
 
 Order of growth of running time:
-
+V + E
 
 /******************************************************************************
  *  Describe concisely your algorithm to compute the shortest common
@@ -58,19 +62,21 @@ Order of growth of running time:
  *  edgeTo[], and distTo[] arrays.
  *****************************************************************************/
 
-Description:
+Description: To find the shortest common ancestor, two BreadthFirstDirectedPaths
+	are created and a loop is created searches for an ancestor in reversePost order
+	and find th ancestor with the shortest distance.
 
                                               running time
 method                               best case            worst case
 ------------------------------------------------------------------------
-length(int v, int w)
+length(int v, int w)                   V + E              any multiples of V
 
-ancestor(int v, int w)
+ancestor(int v, int w)                 V + E              any multiples of V
 
-length(Iterable<Integer> v,
+length(Iterable<Integer> v,            V + E              any multiples of V
        Iterable<Integer> w)
 
-ancestor(Iterable<Integer> v,
+ancestor(Iterable<Integer> v,          V + E              any multiples of V
          Iterable<Integer> w)
 
 
@@ -79,7 +85,7 @@ ancestor(Iterable<Integer> v,
 /******************************************************************************
  *  Known bugs / limitations.
  *****************************************************************************/
-
+Needs files to test.
 
 /******************************************************************************
  *  Describe whatever help (if any) that you received.
@@ -87,19 +93,21 @@ ancestor(Iterable<Integer> v,
  *  include any help from people (including course staff, lab TAs,
  *  classmates, and friends) and attribute them by name.
  *****************************************************************************/
-
+Jeneve Castro, Tatiana Nicoara, Dimitar Ivanov we all did the same amount of work and
+split the task and worked on different parts of the assignments
 
 /******************************************************************************
  *  Describe any serious problems you encountered.                    
  *****************************************************************************/
-
+none.
 
 /******************************************************************************
  *  If you worked with a partner, assert below that you followed
  *  the protocol as described on the assignment page. Give one
  *  sentence explaining what each of you contributed.
  *****************************************************************************/
-
+Jeneve Castro, Tatiana Nicoara, Dimitar Ivanov we all did the same amount of work and
+split the task and worked on different parts of the assignments
 
 
 
@@ -108,7 +116,7 @@ ancestor(Iterable<Integer> v,
  *  please complete the brief mid-course survey at https://goo.gl/gB3Gzw
  * 
  ***********************************************************************/
-
+N/A
 
 /******************************************************************************
  *  List any other comments here. Feel free to provide any feedback   
