@@ -164,9 +164,9 @@ public class WordNet {
 	  */
 	 public static void main(String[] args) {
 		 WordNet wordnet = new WordNet("wn/synsets.txt", "wn/hypernyms.txt");
-		 String word = "Aberdeen";
-		 Integer number = 71;
-		 int graphNumber = 78;
+		 String word = "decade";
+		 Integer number = 52;
+		 int graphNumber = 91;
 			
 		 System.out.print(word + ":");
 		 for (Integer i : wordnet.wordToIntegerMap.get(word))
@@ -180,7 +180,7 @@ public class WordNet {
 		 for (int num : wordnet.graph.adj(graphNumber))
 			 System.out.print(" " + num);
 			
-		 System.out.println("\n\n\n");
+		 System.out.println();
 		 System.out.println(wordnet.sap("drum", "keyboard"));
 	 }
 }

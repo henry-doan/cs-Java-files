@@ -3,7 +3,7 @@
  *  NetID:    
  *  Precept:  
  *
- *  Partner Name:     
+ *  Partner Name: Jeneve Castro, Tatiana Nicoara, Dimitar Ivanov    
  *  Partner NetID:    
  *  Partner Precept:  
  *

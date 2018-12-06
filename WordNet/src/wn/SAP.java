@@ -1,9 +1,11 @@
 package wn;
 
+import edu.princeton.cs.algs4.BreadthFirstDirectedPaths;
+import edu.princeton.cs.algs4.DepthFirstDirectedPaths;
+import edu.princeton.cs.algs4.DepthFirstOrder;
 import edu.princeton.cs.algs4.Digraph;
-import edu.princeton.cs.algs4.In;
-import edu.princeton.cs.algs4.StdIn;
-import edu.princeton.cs.algs4.StdOut;
+import edu.princeton.cs.algs4.DirectedCycle;
+import edu.princeton.cs.algs4.Stack;
 
 /*
  * An immutable data type of an ancestral path between two vertices
@@ -15,7 +17,7 @@ import edu.princeton.cs.algs4.StdOut;
  * @author Henry Doan
  */
 public class SAP {
-	private Digraph digraph;
+	private Digraph graph;
 
 	/*
 	 * Constructor takes a digraph (not necessarily a DAG).
@@ -24,9 +26,12 @@ public class SAP {
 	 * @throws NullPointerException -- if any argument is null.
 	 */
 	public SAP(Digraph G) {
+		// corner case
 		if (G == null) {
-			 throw new NullPointerException();
-		 }
+			throw new NullPointerException();
+		}
+		// initialize the graph
+		graph = new Digraph(G);
 	}
 
 	/*
@@ -36,8 +41,8 @@ public class SAP {
 	 *         false -- the digraph is not a directed acyclic graph.
 	 */
 	public boolean isDAG() {
-		return false;
-		
+		// check the digraph cycle
+		return !new DirectedCycle(graph).hasCycle();
 	}
 
 	/*
@@ -47,7 +52,20 @@ public class SAP {
 	 *         false -- the digraph is not a rooted directed acyclic graph.
 	 */
 	public boolean isRootedDAG() {
-		return false;	
+		// if it is not a directed acyclic graph
+		if (!isDAG()) return false;
+		
+		// find root
+		DepthFirstOrder dfo = new DepthFirstOrder(this.graph);
+	    Integer rootVertex = dfo.post().iterator().next();
+	    
+	    // check the paths of the vertices 
+	    DepthFirstDirectedPaths dfdp = new DepthFirstDirectedPaths(graph.reverse(), rootVertex);
+	    for (int i = 0; i < graph.V(); i++) {
+	    		if(!dfdp.hasPathTo(i)) return false;
+	    }
+	    
+	    return true;
 	}
 
 	/* 
@@ -59,12 +77,19 @@ public class SAP {
 	 * @throws IndexOutOfBoundsException -- if the argument is not in the range of 0 and digraph v - 1.
 	 */
 	public int length(int v, int w) {
-		if (v < 0 || v > digraph.V() - 1 || w < 0 || w > digraph.V() - 1 ) {
+		// corner case
+		if (v < 0 || v > graph.V() - 1 || w < 0 || w > graph.V() - 1 ) {
 			throw new IndexOutOfBoundsException();
 		}
-		return w;	
+		// add v and w to a stack
+		Stack<Integer> vStack = new Stack<>();
+    		vStack.push(v);
+    		Stack<Integer> wStack = new Stack<>();
+    		wStack.push(w);
+    		// use helper method for length
+	    return ancestorAndLength(vStack, wStack)[1];	
 	}
-
+	
 	/*
 	 * A common ancestor of v and w that participates in a 
 	 * shortest ancestral path; -1 if no such path.
@@ -75,11 +100,85 @@ public class SAP {
 	 *         -1 -- if there is no such path.
 	 * @throws IndexOutOfBoundsException -- if the argument is not in the range of 0 and digraph v - 1.
 	 */
-	public int ancestor(int v, int w) {
-		if (v < 0 || v > digraph.V() - 1 || w < 0 || w > digraph.V() - 1 ) {
-			throw new IndexOutOfBoundsException();
+	public int ancestor(Iterable<Integer> v, Iterable<Integer> w){
+		// corner cases
+		if (v == null || w == null) {
+			throw new NullPointerException();
 		}
-		return -1;
+		
+		for (Integer i : v) {
+			if (i < 0 || i > graph.V() - 1 ) {
+				throw new IndexOutOfBoundsException();
+			}
+        }
+		
+		for (Integer i : w) {
+			if (i < 0 || i > graph.V() - 1 ) {
+				throw new IndexOutOfBoundsException();
+			}
+        }
+		
+		// helper method to get the length
+		return ancestorAndLength(v, w)[0];
+    }
+	
+	/* 
+	 * A common ancestor that participates in shortest 
+	 * ancestral path; -1 if no such path.
+	 *
+	 * @param v -- int vertex in the graph.
+	 *        w -- int vertex in the graph.
+	 * @return -- the common ancestor.
+	 *         -1 -- if there is no such path.
+	 * @throws NullPointerException -- if any argument is null.
+	 * 		   IndexOutOfBoundsException -- if the argument is not in the range of 0 and digraph v - 1.
+	 */
+	private int[] ancestorAndLength(Iterable<Integer> v, Iterable<Integer> w){
+		// corner cases
+		if (v == null || w == null) {
+			throw new NullPointerException();
+		}
+		
+		for (Integer i : v) {
+			if (i < 0 || i > graph.V() - 1 ) {
+				throw new IndexOutOfBoundsException();
+			}
+        }
+		
+		for (Integer i : w) {
+			if (i < 0 || i > graph.V() - 1 ) {
+				throw new IndexOutOfBoundsException();
+			}
+        }
+		
+		// Data Structures to find the paths
+	    BreadthFirstDirectedPaths vPaths = new BreadthFirstDirectedPaths(graph, v);
+	    BreadthFirstDirectedPaths wPaths = new BreadthFirstDirectedPaths(graph, w);
+	   
+	    // DepthFirstOrder in a graph
+	    DepthFirstOrder DFO = new DepthFirstOrder(graph);
+	        
+	    // Closest ancestor and length
+	    int ancestor = -1;
+	    int length = -1;
+	   
+	    // Start with reverse post order from the DFO
+	    for (int i: DFO.reversePost()){
+		    if (vPaths.hasPathTo(i) && wPaths.hasPathTo(i)){
+			    // Common ancestor found, calculate the current length
+			    int currentLength = vPaths.distTo(i) + wPaths.distTo(i);
+			   
+			    // See if it's closer than the current
+			    if (currentLength < length || ancestor == -1){
+				    ancestor = i;
+				    length = currentLength;
+			    } else break;
+		    }
+	    }
+	   
+	    // Returns an array where ancestorAndLength[0] = ancestor and ancestorAndLength[1] = length
+	    int[] ancestorAndLength = {ancestor, length};
+	    return ancestorAndLength;
 	}
 
 	/*
@@ -94,71 +193,24 @@ public class SAP {
 	 * 		   IndexOutOfBoundsException -- if the argument is not in the range of 0 and digraph v - 1.
 	 */
 	public int length(Iterable<Integer> v, Iterable<Integer> w) {
+		// corner cases
 		if (v == null || w == null) {
 			throw new NullPointerException();
 		}
 		
 		for (Integer i : v) {
-			if (i < 0 || i > digraph.V() - 1 ) {
+			if (i < 0 || i > graph.V() - 1 ) {
 				throw new IndexOutOfBoundsException();
 			}
         }
 		
 		for (Integer i : w) {
-			if (i < 0 || i > digraph.V() - 1 ) {
+			if (i < 0 || i > graph.V() - 1 ) {
 				throw new IndexOutOfBoundsException();
 			}
         }
 		
-		return -1;
-		
-	}
-
-	/* 
-	 * A common ancestor that participates in shortest 
-	 * ancestral path; -1 if no such path.
-	 *
-	 * @param v -- int vertex in the graph.
-	 *        w -- int vertex in the graph.
-	 * @return -- the common ancestor.
-	 *         -1 -- if there is no such path.
-	 * @throws NullPointerException -- if any argument is null.
-	 * 		   IndexOutOfBoundsException -- if the argument is not in the range of 0 and digraph v - 1.
-	 */
-	public int ancestor(Iterable<Integer> v, Iterable<Integer> w) {
-		if (v == null || w == null) {
-			throw new NullPointerException();
-		}
-		
-		for (Integer i : v) {
-			if (i < 0 || i > digraph.V() - 1 ) {
-				throw new IndexOutOfBoundsException();
-			}
-        }
-		
-		for (Integer i : w) {
-			if (i < 0 || i > digraph.V() - 1 ) {
-				throw new IndexOutOfBoundsException();
-			}
-        }
-		
-		return -1;
-		
-	}
-
-	/*
-	 * Loads up the files and start the sap process.
-	 */
-	public static void main(String[] args) {
-	    In in = new In(args[0]);
-	    Digraph G = new Digraph(in);
-	    SAP sap = new SAP(G);
-	    while (!StdIn.isEmpty()) {
-	        int v = StdIn.readInt();
-	        int w = StdIn.readInt();
-	        int length   = sap.length(v, w);
-	        int ancestor = sap.ancestor(v, w);
-	        StdOut.printf("length = %d, ancestor = %d\n", length, ancestor);
-	    }
+		// use helper method to find the length
+		return ancestorAndLength(v, w)[1];
 	}
 }

@@ -1,6 +1,8 @@
 package wn;
 
 import edu.princeton.cs.algs4.In;
+import edu.princeton.cs.algs4.MaxPQ;
+import edu.princeton.cs.algs4.ST;
 import edu.princeton.cs.algs4.StdOut;
 
 /*
@@ -12,13 +14,16 @@ import edu.princeton.cs.algs4.StdOut;
  * @author Henry Doan
  */
 public class Outcast {
+	private WordNet wn;
+	
 	/* 
 	 * Constructor takes a WordNet object.
 	 * 
 	 * @param wordnet -- word net object initialized. 
 	 */
 	public Outcast(WordNet wordnet) {
-		
+		// initialize a word net
+		wn = wordnet;
 	}
 	
 	/*
@@ -28,7 +33,24 @@ public class Outcast {
 	 * @return -- the outcast.
 	 */
 	public String outcast(String[] nouns) {
-		return null;
+		// st and max priority queue
+		ST<Integer, String> st = new ST<>();
+		MaxPQ<Integer> maxPQ = new MaxPQ<>();
+		
+		// loop through all the nouns
+		for (int i = 0; i < nouns.length; i++){
+			int distance = 0;
+			// check the distances
+			for (int j = 0; j < nouns.length; j++){
+				distance += wn.distance(nouns[i], nouns[j]);
+			}
+			// add the distance to data structure
+			maxPQ.insert(distance);
+			st.put(distance, nouns[i]);
+		}
+		
+		// return the outcast
+		return st.get(maxPQ.max());
 	}
 
 	/*
