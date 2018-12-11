@@ -1,0 +1,29 @@
+Data Structure applications
+
+
+	Stack
+		- Filling system
+	Queue
+		- Songs in a playlist
+		- orders
+		- mail
+	Priority Queue
+		- Express ordering
+	HashMaps
+		- Key values, data like user data
+	Sort
+		- Sort Numbers
+		- Words
+		- Money
+		- Stats
+		- Filters on category
+	BST
+		- Dictionary
+	
+	- Database
+	Recursion 
+		- Any recount or math calculations
+		- Mapping stars	
+	Graphs
+		- Facebooks
+		- Google maps
